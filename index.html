@@ -212,7 +212,7 @@
           <span class="text-[10px] tracking-widest uppercase font-semibold text-gold-700 mt-1">
             Bari • Dal 1992
           </span>
-          <span class="text-[9px] text-olive-700/80 font-medium tracking-tight hidden 2xl:block">
+          <span class="text-[9px] text-olive-700/80 font-medium tracking-tight hidden lg:block max-w-[190px] leading-snug">
             Associazione Meridionale Estimatori e Degustatori dell’Olio di Oliva
           </span>
         </div>
@@ -230,16 +230,14 @@
         <a href="#corsi" class="hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Corsi & Certificazioni</a>
         <a href="#community" class="hidden xl:inline hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Community</a>
         <a href="#contatti" class="hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Contatti</a>
-      </nav>
-
-      <!-- Action Button & Mobile Toggle -->
-      <div class="flex items-center gap-4">
-        <button onclick="openModal('Idoneità Fisiologica all\'Assaggio (35 Ore)')" class="hidden sm:inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-olive-800 hover:bg-olive-700 text-limestone-50 font-medium text-sm shadow-md hover:shadow-lg hover:shadow-olive-900/20 border border-gold-500/40 transition-all duration-200 transform hover:-translate-y-0.5 shrink-0">
-          <i data-lucide="award" class="w-4 h-4 text-gold-400"></i>
+        <button onclick="openModal('Idoneità Fisiologica all\'Assaggio (35 Ore)')" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-olive-800 hover:bg-olive-700 text-limestone-50 font-medium text-[13px] xl:text-sm border border-gold-500/40 shadow-sm hover:shadow-md transition-all">
+          <i data-lucide="award" class="w-3.5 h-3.5 text-gold-400"></i>
           <span>Iscriviti ai Corsi</span>
         </button>
+      </nav>
 
-        <!-- Mobile Menu Toggle Button -->
+      <!-- Mobile Menu Toggle -->
+      <div class="flex items-center gap-4">
         <button id="mobile-menu-btn" aria-label="Apri Menu Mobile" class="lg:hidden p-2 rounded-md text-olive-900 hover:bg-limestone-200/60 focus:outline-none focus:ring-2 focus:ring-gold-500">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
