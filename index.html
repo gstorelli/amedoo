@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMEDOO | Associazione Meridionale Estimatori e Degustatori dell’Olio di Oliva - Bari</title>
+  <meta name="description" content="AMEDOO - Dal 1992 a Bari, l'istituzione per la valutazione sensoriale dell'Olio Extra Vergine di Oliva, corsi ufficiali di idoneità fisiologica all'assaggio (MASAF/COI), panel test e cultura dell'EVO.">
+  <meta name="keywords" content="AMEDOO, assaggiatore olio, panel test bari, corsi olio puglia, idoneità fisiologica assaggio olio, camera di commercio bari, olio extravergine oliva, cultivar coratina, SAMER, AIS puglia">
+  <meta name="author" content="AMEDOO Bari">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AMEDOO | Associazione Meridionale Estimatori e Degustatori dell’Olio di Oliva">
+  <meta property="og:description" content="Corsi ufficiali di abilitazione all'assaggio di Olio EVO, Panel Test a norma COI/UE e cultura olearia mediterranea a Bari.">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:image" content="./logo.png">
+  <meta property="og:image:alt" content="Logo Ufficiale AMEDOO Bari">
+
+  <!-- Favicon: Authentic Scontornato Logo -->
+  <link rel="icon" type="image/png" href="./logo-mark.png">
+
+  <!-- Google Fonts: Cormorant Garamond, Playfair Display, and Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            olive: {
+              50: '#f6f7f3',
+              100: '#ebede4',
+              200: '#d7dbca',
+              300: '#bbc3a7',
+              400: '#9ca781',
+              500: '#7e8c60',
+              600: '#556B2F', // Olive Drab
+              700: '#42542B', // Deep Tuscan
+              800: '#2D3B1E', // AMEDOO Core
+              900: '#232e17',
+              950: '#131a0b',
+            },
+            gold: {
+              50: '#fdfbf2',
+              100: '#fbf5e1',
+              200: '#f7ebc2',
+              300: '#f1dc98',
+              400: '#e9c869',
+              500: '#D4AF37', // Extra Virgin Gold
+              600: '#b89324',
+              700: '#926f1d',
+              800: '#77571d',
+              900: '#64471c',
+            },
+            limestone: {
+              50: '#FAF8F5',
+              100: '#F3EFEA',
+              200: '#E7E2D8',
+              300: '#D5CDC0',
+              400: '#B8ABA4',
+            },
+            charcoal: {
+              800: '#2B3023',
+              900: '#1C1F16',
+              950: '#12140E',
+            }
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            display: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* Custom Luxury Styling & Micro-interactions */
+    ::selection {
+      background-color: #D4AF37;
+      color: #1C2412;
+    }
+    
+    /* Smooth custom range slider */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: #E7E2D8;
+      height: 6px;
+      border-radius: 9999px;
+      outline: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #2D3B1E;
+      border: 2px solid #D4AF37;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.15s ease, background-color 0.15s ease;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+      background: #42542B;
+    }
+
+    /* Glassmorphic elements */
+    .glass-nav {
+      background: rgba(250, 248, 245, 0.90);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .glass-dark {
+      background: rgba(28, 36, 18, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Decorative olive pattern background */
+    .pattern-olive {
+      background-color: #FAF8F5;
+      background-image: radial-gradient(#42542B 0.75px, transparent 0.75px), radial-gradient(#D4AF37 0.75px, #FAF8F5 0.75px);
+      background-size: 36px 36px;
+      background-position: 0 0, 18px 18px;
+    }
+
+    /* Pulse animation for live indicators */
+    @keyframes pulse-gold {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.1); }
+    }
+    .animate-pulse-gold {
+      animation: pulse-gold 2.4s infinite ease-in-out;
+    }
+
+    /* Radar Chart Transition */
+    .radar-polygon {
+      transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    /* Image zoom on hover container */
+    .img-zoom-container {
+      overflow: hidden;
+    }
+    .img-zoom-container img {
+      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .img-zoom-container:hover img {
+      transform: scale(1.06);
+    }
+  </style>
+</head>
+<body class="bg-limestone-50 text-charcoal-900 font-sans antialiased selection:bg-gold-500 selection:text-olive-950 overflow-x-hidden">
+
+  <!-- ========================================================================= -->
+  <!-- 1. TOP ANNOUNCEMENT BAR & STICKY HEADER -->
+  <!-- ========================================================================= -->
+  <aside aria-label="Informazioni Istituzionali" class="bg-olive-900 text-limestone-100 text-xs py-2 px-4 border-b border-olive-800/80">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-gold-400 animate-pulse-gold"></span>
+        <span class="tracking-wide font-medium">Ente Riconosciuto da Istituzioni ed Enti Territoriali Olivicoli | Bari, Puglia</span>
+      </div>
+      <div class="flex items-center gap-4 text-limestone-300">
+        <a href="tel:0802174315" class="hover:text-gold-400 transition-colors flex items-center gap-1">
+          <i data-lucide="phone" class="w-3 h-3"></i> 080 2174315
+        </a>
+        <span class="text-olive-700">|</span>
+        <span class="flex items-center gap-1">
+          <i data-lucide="map-pin" class="w-3 h-3 text-gold-400"></i> Sede: c/o Camera di Commercio di Bari
+        </span>
+        <span class="text-olive-700 hidden sm:inline">|</span>
+        <span class="text-gold-300 font-semibold tracking-wider hidden sm:inline">ISCRIZIONI SESSIONE 2025/2026 APERTE</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Navbar with Official Logo -->
+  <header id="main-header" class="sticky top-0 z-50 glass-nav border-b border-limestone-200/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand & Official Logo Lockup -->
+      <a href="#hero" class="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-gold-500 rounded-lg p-1">
+        <!-- Official Clean Scontornato Logo -->
+        <div class="relative h-14 w-auto flex items-center justify-center shrink-0">
+          <img src="./logo.png" alt="Logo Ufficiale AMEDOO Bari" class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-sm">
+        </div>
+
+        <div class="flex flex-col">
+          <span class="font-serif text-2xl font-bold tracking-wider text-olive-900 group-hover:text-olive-700 transition-colors leading-none">
+            A.M.E.D.O.O.
+          </span>
+          <span class="text-[10px] tracking-widest uppercase font-semibold text-gold-700 mt-1">
+            Bari • Dal 1992
+          </span>
+          <span class="text-[9px] text-olive-700/80 font-medium tracking-tight hidden lg:block">
+            Associazione Meridionale Estimatori e Degustatori dell’Olio di Oliva
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-charcoal-800" aria-label="Menu Principale">
+        <a href="#about" class="hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Chi Siamo</a>
+        <a href="#perche-assaggio" class="hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">L'Arte dell'Assaggio</a>
+        <a href="#metodo" class="hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Il Panel Test</a>
+        <a href="#profiler" class="hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span>
+          Sensory Profiler
+        </a>
+        <a href="#corsi" class="hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Corsi & Certificazioni</a>
+        <a href="#community" class="hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Community</a>
+        <a href="#contatti" class="hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Contatti</a>
+      </nav>
+
+      <!-- Action Button & Mobile Toggle -->
+      <div class="flex items-center gap-4">
+        <button onclick="openModal('Idoneità Fisiologica all\'Assaggio (35 Ore)')" class="hidden sm:inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-olive-800 hover:bg-olive-700 text-limestone-50 font-medium text-sm shadow-md hover:shadow-lg hover:shadow-olive-900/20 border border-gold-500/40 transition-all duration-200 transform hover:-translate-y-0.5">
+          <i data-lucide="award" class="w-4 h-4 text-gold-400"></i>
+          <span>Iscriviti ai Corsi</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" aria-label="Apri Menu Mobile" class="lg:hidden p-2 rounded-md text-olive-900 hover:bg-limestone-200/60 focus:outline-none focus:ring-2 focus:ring-gold-500">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-limestone-50 border-b border-limestone-200 px-6 pt-4 pb-6 transition-all duration-300">
+      <nav class="flex flex-col gap-3 font-medium text-base text-charcoal-800">
+        <a href="#about" class="py-2 hover:text-olive-700 border-b border-limestone-200/50">Chi Siamo</a>
+        <a href="#perche-assaggio" class="py-2 hover:text-olive-700 border-b border-limestone-200/50">L'Arte dell'Assaggio</a>
+        <a href="#metodo" class="py-2 hover:text-olive-700 border-b border-limestone-200/50">Il Panel Test Ufficiale</a>
+        <a href="#profiler" class="py-2 hover:text-olive-700 border-b border-limestone-200/50 flex items-center justify-between">
+          <span>Sensory Profiler Interattivo</span>
+          <span class="text-xs bg-gold-200 text-gold-900 px-2 py-0.5 rounded-full font-semibold">Simulatore</span>
+        </a>
+        <a href="#corsi" class="py-2 hover:text-olive-700 border-b border-limestone-200/50">Corsi & Certificazioni</a>
+        <a href="#community" class="py-2 hover:text-olive-700 border-b border-limestone-200/50">Community Instagram</a>
+        <a href="#contatti" class="py-2 hover:text-olive-700">Contatti & Sede</a>
+        <button onclick="openModal('Idoneità Fisiologica all\'Assaggio (35 Ore)')" class="mt-2 w-full py-3 rounded-full bg-olive-800 text-limestone-50 font-medium flex items-center justify-center gap-2">
+          <i data-lucide="award" class="w-4 h-4 text-gold-400"></i>
+          <span>Iscriviti ai Corsi Ufficiali</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 2. EDITORIAL HERO SECTION WITH PHOTOGRAPHIC SHOWCASE -->
+  <!-- ========================================================================= -->
+  <section id="hero" class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-32 pattern-olive">
+    <!-- Subtle Ambient Glow in background -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-gold-300/20 blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-32 w-[32rem] h-[32rem] rounded-full bg-olive-500/10 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        
+        <!-- Left Editorial Copy -->
+        <div class="lg:col-span-7 space-y-7">
+          
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-olive-100/90 border border-olive-300/60 text-olive-800 text-xs font-semibold tracking-wider uppercase">
+            <span class="w-2 h-2 rounded-full bg-gold-600"></span>
+            Dal 1992 a Bari • Istituto di Analisi Sensoriale e Qualificazione EVO
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-olive-950 font-bold leading-[1.12] tracking-tight">
+            L'Arte Scientifica dell’<span class="italic text-olive-700 font-normal">Olio Extra Vergine</span> d'Oliva.
+          </h1>
+
+          <p class="text-charcoal-800/90 text-lg sm:text-xl font-normal leading-relaxed max-w-2xl">
+            L'istituzione pugliese che unisce il rigore analitico del <strong class="text-olive-900 font-semibold">Panel Test normato COI/UE</strong> alla tutela del patrimonio olivicolo mediterraneo. Formiamo assaggiatori professionisti abilitati per l'Elenco Nazionale.
+          </p>
+
+          <!-- Dual CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <a href="#corsi" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full bg-olive-800 hover:bg-olive-700 text-limestone-50 font-semibold shadow-xl shadow-olive-950/15 border border-gold-500/50 transition-all duration-200 transform hover:-translate-y-0.5 group">
+              <span>Esplora i Corsi Ufficiali</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 text-gold-400 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+            <a href="#profiler" class="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full bg-white/80 hover:bg-white text-olive-900 font-semibold border border-limestone-300 shadow-sm hover:shadow-md transition-all duration-200">
+              <i data-lucide="activity" class="w-5 h-5 text-gold-600"></i>
+              <span>Prova il Sensory Profiler</span>
+            </a>
+          </div>
+
+          <!-- Institutional Credentials Trust Bar -->
+          <div class="pt-6 border-t border-limestone-200/90 flex flex-wrap items-center gap-y-3 gap-x-6 text-xs text-charcoal-800/80">
+            <span class="font-semibold text-olive-900 uppercase tracking-wider text-[11px]">In Convenzione con:</span>
+            <span class="flex items-center gap-1.5 font-medium">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-600"></i> Camera di Commercio di Bari
+            </span>
+            <span class="flex items-center gap-1.5 font-medium">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-600"></i> Unioncamere Puglia
+            </span>
+            <span class="flex items-center gap-1.5 font-medium">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-600"></i> SAMER Lab
+            </span>
+            <span class="flex items-center gap-1.5 font-medium">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-600"></i> AIS Puglia
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Right Visual Showcase: Real Photographic Masterpiece of Tasting in Puglia -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Luxury Glass Card Container -->
+            <div class="relative rounded-3xl p-3 sm:p-4 bg-white/80 backdrop-blur-xl border border-white/90 shadow-2xl shadow-olive-950/15 overflow-hidden">
+              
+              <!-- Floating Official Standard Badge -->
+              <div class="absolute top-7 right-7 z-20 bg-olive-950/85 backdrop-blur-md text-gold-300 px-3.5 py-1.5 rounded-full text-[11px] font-semibold tracking-wider flex items-center gap-1.5 shadow-lg border border-gold-500/30">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-gold-400"></i> COI / IOC Standard
+              </div>
+
+              <!-- Main Hero Photo Container with Zoom Effect -->
+              <div class="img-zoom-container rounded-2xl overflow-hidden aspect-[4/3] relative shadow-inner bg-olive-950">
+                <img src="./hero_tasting.webp" alt="Sessione di Assaggio Ufficiale di Olio Extra Vergine di Oliva con Bicchiere Cobalto in Puglia" class="w-full h-full object-cover">
+                
+                <!-- Bottom Gradient Shade for Caption -->
+                <div class="absolute inset-0 bg-gradient-to-t from-olive-950/80 via-transparent to-transparent"></div>
+                
+                <div class="absolute bottom-3 left-4 right-4 text-white">
+                  <span class="text-[10px] uppercase font-bold tracking-widest text-gold-300 block">Metodo Ufficiale Panel Test</span>
+                  <p class="text-xs font-serif italic text-limestone-200">
+                    Bicchiere cobalto normato a 28°C e valutazione organolettica delle cultivar pugliesi
+                  </p>
+                </div>
+              </div>
+
+              <!-- Real-time Stats Strip Below Image -->
+              <div class="mt-3 pt-3 border-t border-limestone-200 grid grid-cols-2 gap-3 text-center">
+                <div class="bg-limestone-100/70 rounded-xl p-2.5 border border-limestone-200/60">
+                  <span class="text-[11px] text-charcoal-800/70 block">Bicchiere Ufficiale</span>
+                  <span class="text-xs font-bold text-olive-900">Norma COI/T.20/Doc.15</span>
+                </div>
+                <div class="bg-limestone-100/70 rounded-xl p-2.5 border border-limestone-200/60">
+                  <span class="text-[11px] text-charcoal-800/70 block">Metodo di Prova</span>
+                  <span class="text-xs font-bold text-olive-900">Reg. (UE) 2022/2104</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Live Stats Numerical Counter Section -->
+      <div class="mt-16 sm:mt-24 grid grid-cols-2 md:grid-cols-4 gap-6">
+        
+        <div class="bg-white/85 backdrop-blur-md rounded-2xl p-6 border border-limestone-200/90 shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-gold-600 mb-2">
+            <i data-lucide="calendar" class="w-6 h-6"></i>
+          </div>
+          <div class="font-serif text-3xl sm:text-4xl font-bold text-olive-950 flex items-baseline">
+            <span class="counter-num" data-target="32">0</span>
+            <span class="text-gold-600 ml-0.5">+</span>
+          </div>
+          <p class="text-xs sm:text-sm text-charcoal-800/80 mt-1 font-medium">Anni di Attività e Storia (Dal 1992 a Bari)</p>
+        </div>
+
+        <div class="bg-white/85 backdrop-blur-md rounded-2xl p-6 border border-limestone-200/90 shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-gold-600 mb-2">
+            <i data-lucide="user-check" class="w-6 h-6"></i>
+          </div>
+          <div class="font-serif text-3xl sm:text-4xl font-bold text-olive-950 flex items-baseline">
+            <span class="counter-num" data-target="1450">0</span>
+            <span class="text-gold-600 ml-0.5">+</span>
+          </div>
+          <p class="text-xs sm:text-sm text-charcoal-800/80 mt-1 font-medium">Assaggiatori Abilitati all'Idoneità</p>
+        </div>
+
+        <div class="bg-white/85 backdrop-blur-md rounded-2xl p-6 border border-limestone-200/90 shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-gold-600 mb-2">
+            <i data-lucide="scale" class="w-6 h-6"></i>
+          </div>
+          <div class="font-serif text-3xl sm:text-4xl font-bold text-olive-950 flex items-baseline">
+            <span class="counter-num" data-target="100">0</span>
+            <span class="text-gold-600 ml-0.5">%</span>
+          </div>
+          <p class="text-xs sm:text-sm text-charcoal-800/80 mt-1 font-medium">Sessioni Conformi a Regolamenti COI/UE</p>
+        </div>
+
+        <div class="bg-white/85 backdrop-blur-md rounded-2xl p-6 border border-limestone-200/90 shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-gold-600 mb-2">
+            <i data-lucide="landmark" class="w-6 h-6"></i>
+          </div>
+          <div class="font-serif text-3xl sm:text-4xl font-bold text-olive-950 flex items-baseline">
+            <span class="counter-num" data-target="580">0</span>
+            <span class="text-gold-600 ml-0.5">+</span>
+          </div>
+          <p class="text-xs sm:text-sm text-charcoal-800/80 mt-1 font-medium">Frantoi e Imprese Olearie Formate</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 3. ABOUT AMEDOO & HISTORY (BARI LEGACY & INSTITUTIONAL PARTNERS) -->
+  <!-- ========================================================================= -->
+  <section id="about" class="py-24 bg-white border-y border-limestone-200 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest font-bold text-gold-700 bg-gold-100/70 px-3 py-1 rounded-full">
+          Tradizione, Scienza e Territorio
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-olive-950 font-bold mt-4 mb-5">
+          La Voce Autorevole dell'Assaggio in Puglia
+        </h2>
+        <p class="text-charcoal-800/80 text-base sm:text-lg leading-relaxed">
+          Nata nel 1992 nel cuore di Bari, l'<strong>A.M.E.D.O.O.</strong> (Associazione Meridionale Estimatori e Degustatori dell’Olio di Oliva) è il presidio scientifico e culturale dedicato alla qualificazione del prodotto principe del Mediterraneo.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+        
+        <!-- Left: Editorial Storytelling -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="border-l-2 border-gold-500 pl-6 space-y-4">
+            <h3 class="font-serif text-2xl text-olive-900 font-semibold">
+              Oltre tre decenni di rigore sensoriale e tutela delle cultivar autoctone
+            </h3>
+            <p class="text-charcoal-800/90 leading-relaxed text-sm sm:text-base">
+              La Puglia è la prima regione olivicola d'Italia, culla di cultivar monumentali come la potente <em>Coratina</em>, l'armonica <em>Ogliarola Barese</em>, la complessa <em>Peranzana</em> e la fruttata <em>Cellina di Nardò</em>. In questo panorama unico, AMEDOO nasce con una missione precisa: trasformare l'apprezzamento dell'olio da mera percezione empirica a <strong>disciplina scientifica codificata</strong>.
+            </p>
+            <p class="text-charcoal-800/90 leading-relaxed text-sm sm:text-base">
+              Operando in stretta cooperazione con la <strong>Camera di Commercio di Bari</strong>, l'associazione è punto di riferimento per le commissioni di assaggio, per la formazione continua dei Capi Panel e per i corsi ufficiali autorizzati dal Ministero (MASAF) per l'abilitazione all'Elenco Nazionale dei Tecnici ed Esperti degli Oli Vergini ed Extravergini.
+            </p>
+          </div>
+
+          <!-- Feature Bullets -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-limestone-50 border border-limestone-200">
+              <i data-lucide="check" class="w-5 h-5 text-olive-700 shrink-0 mt-0.5"></i>
+              <div>
+                <h4 class="font-semibold text-sm text-olive-950">Panel Test Ufficiale</h4>
+                <p class="text-xs text-charcoal-800/70 mt-0.5">Commissioni certificate secondo standard europei e COI.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-limestone-50 border border-limestone-200">
+              <i data-lucide="check" class="w-5 h-5 text-olive-700 shrink-0 mt-0.5"></i>
+              <div>
+                <h4 class="font-semibold text-sm text-olive-950">Didattica d'Eccellenza</h4>
+                <p class="text-xs text-charcoal-800/70 mt-0.5">Sessioni pratiche su difetti reali e virtù monovarietali.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-limestone-50 border border-limestone-200">
+              <i data-lucide="check" class="w-5 h-5 text-olive-700 shrink-0 mt-0.5"></i>
+              <div>
+                <h4 class="font-semibold text-sm text-olive-950">Accreditamento MASAF</h4>
+                <p class="text-xs text-charcoal-800/70 mt-0.5">Attestati validi per l'iscrizione all'Elenco Nazionale Esperti.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-limestone-50 border border-limestone-200">
+              <i data-lucide="check" class="w-5 h-5 text-olive-700 shrink-0 mt-0.5"></i>
+              <div>
+                <h4 class="font-semibold text-sm text-olive-950">Sinergia Istituzionale</h4>
+                <p class="text-xs text-charcoal-800/70 mt-0.5">Camera di Commercio, SAMER Lab chimico e AIS Sommelier.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Real Image of Monumental Olive Trees & Cultivar Focus -->
+        <div class="lg:col-span-6">
+          <div class="bg-limestone-50 rounded-3xl p-4 sm:p-6 border border-limestone-200/90 shadow-md relative overflow-hidden">
+            
+            <div class="flex items-center justify-between mb-4 px-2">
+              <div>
+                <span class="text-xs font-bold text-olive-700 uppercase tracking-wider">Patrimonio del Territorio</span>
+                <h4 class="font-serif text-xl font-bold text-olive-950">Gli Ulivi Monumentali delle Murge</h4>
+              </div>
+              <span class="text-xs px-2.5 py-1 rounded-full bg-gold-200/80 text-gold-950 font-semibold flex items-center gap-1">
+                <i data-lucide="map-pin" class="w-3 h-3 text-gold-700"></i> Bari & Murge
+              </span>
+            </div>
+
+            <!-- Monumental Grove Image with Overlay -->
+            <div class="img-zoom-container rounded-2xl overflow-hidden aspect-[4/3] relative shadow-md bg-olive-950">
+              <img src="./monumental_grove.webp" alt="Ulivi secolari monumentali in Puglia nella Murgia barese" class="w-full h-full object-cover">
+              
+              <!-- Tag in image -->
+              <div class="absolute bottom-3 left-3 right-3 bg-olive-950/80 backdrop-blur-md rounded-xl p-3 border border-gold-500/30 text-white">
+                <div class="flex justify-between items-center text-xs">
+                  <span class="font-semibold text-gold-300">Cultivar Coratina, Ogliarola & Peranzana</span>
+                  <span class="text-[10px] text-limestone-300">Biodiversità Pugliese</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Caption -->
+            <p class="text-xs text-charcoal-800/70 mt-4 text-center italic">
+              AMEDOO Bari coordina panel di assaggio e corsi di formazione sulle caratteristiche delle oltre 20 cultivar della biodiversità pugliese.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Institutional Partners Banner / Grid -->
+      <div class="border-t border-limestone-200/90 pt-12">
+        <div class="text-center mb-8">
+          <span class="text-xs uppercase tracking-widest font-bold text-olive-800">
+            Autorità, Riconoscimenti e Partner Istituzionali
+          </span>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          
+          <!-- Partner 1: Camera di Commercio di Bari -->
+          <div class="p-5 rounded-2xl bg-limestone-50 border border-limestone-200 text-center flex flex-col items-center justify-center hover:border-gold-400 transition-colors">
+            <div class="h-14 w-full flex items-center justify-center mb-3">
+              <img src="./partner_cciaa_bari.png" alt="Logo Camera di Commercio Bari" class="max-h-14 max-w-full object-contain">
+            </div>
+            <h5 class="font-bold text-sm text-olive-950">Camera di Commercio</h5>
+            <span class="text-xs text-charcoal-800/70 mt-1">Bari • Sede Operativa</span>
+          </div>
+
+          <!-- Partner 2: Unioncamere Puglia -->
+          <div class="p-5 rounded-2xl bg-limestone-50 border border-limestone-200 text-center flex flex-col items-center justify-center hover:border-gold-400 transition-colors">
+            <div class="h-14 w-full flex items-center justify-center mb-3">
+              <img src="./partner_unioncamere_puglia_blue.png" alt="Logo Unioncamere Puglia" class="max-h-14 max-w-full object-contain">
+            </div>
+            <h5 class="font-bold text-sm text-olive-950">Unioncamere Puglia</h5>
+            <span class="text-xs text-charcoal-800/70 mt-1">Sviluppo Filiere di Qualità</span>
+          </div>
+
+          <!-- Partner 3: SAMER Bari -->
+          <div class="p-5 rounded-2xl bg-limestone-50 border border-limestone-200 text-center flex flex-col items-center justify-center hover:border-gold-400 transition-colors">
+            <div class="h-14 w-full flex items-center justify-center mb-3">
+              <img src="./partner_samer.png" alt="Logo SAMER Laboratorio Pubblico" class="max-h-14 max-w-full object-contain">
+            </div>
+            <h5 class="font-bold text-sm text-olive-950">SAMER Lab</h5>
+            <span class="text-xs text-charcoal-800/70 mt-1">Analisi Chimico-Merceologiche</span>
+          </div>
+
+          <!-- Partner 4: AIS Puglia -->
+          <div class="p-5 rounded-2xl bg-limestone-50 border border-limestone-200 text-center flex flex-col items-center justify-center hover:border-gold-400 transition-colors">
+            <div class="h-14 w-full flex items-center justify-center mb-3">
+              <img src="./partner_ais_puglia.png" alt="Logo AIS Puglia" class="max-h-14 max-w-full object-contain">
+            </div>
+            <h5 class="font-bold text-sm text-olive-950">AIS Puglia</h5>
+            <span class="text-xs text-charcoal-800/70 mt-1">Associazione Italiana Sommelier</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. DEEP DIVE: COSA FA L'ASSAGGIATORE EVO & PERCHÉ PARTECIPARE -->
+  <!-- ========================================================================= -->
+  <section id="perche-assaggio" class="py-24 bg-limestone-50 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest font-bold text-gold-700 bg-gold-100/80 px-3.5 py-1.5 rounded-full">
+          Guida Didattica & Orientamento Professionale
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-olive-950 font-bold mt-4 mb-4">
+          Cosa Fa l'Assaggiatore di Olio EVO e Perché Diventarlo
+        </h2>
+        <p class="text-charcoal-800/80 text-base sm:text-lg">
+          L'assaggio dell'olio non è un'opinione enogastronomica, ma un <strong class="text-olive-900 font-semibold">esame sensoriale normato per legge</strong>. Scopri la differenza fondamentale tra gustare e valutare.
+        </p>
+      </div>
+
+      <!-- Real Panel Laboratory Photo Banner -->
+      <div class="mb-14 rounded-3xl overflow-hidden border border-limestone-300 shadow-xl bg-olive-950 relative group">
+        <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+          <div class="lg:col-span-7 img-zoom-container aspect-[16/10] overflow-hidden">
+            <img src="./panel_lab.webp" alt="Laboratorio ufficiale di Panel Test con cabine di assaggio a norma COI" class="w-full h-full object-cover">
+          </div>
+          <div class="lg:col-span-5 p-8 sm:p-10 space-y-4 text-white">
+            <span class="text-xs uppercase tracking-wider font-bold text-gold-400 bg-olive-900 px-3 py-1 rounded-full border border-gold-500/30">
+              Laboratorio di Prova Ufficiale
+            </span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold leading-snug">
+              Il Banco di Prova del Panel Test
+            </h3>
+            <p class="text-xs sm:text-sm text-limestone-300/90 leading-relaxed">
+              Ogni giudice opera in una cabina individuale isolata a norma COI/ISO per garantire l'assoluta indipendenza del giudizio. Bicchieri cobalto a 28°C, spicchi di mela verde e acqua per azzerare il palato tra un campione e l'altro, e foglio di profilo sensoriale ufficiale.
+            </p>
+            <div class="pt-2 flex items-center gap-4 text-xs text-gold-300 font-semibold">
+              <span class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4 text-gold-400"></i> 8-12 Giudici</span>
+              <span class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4 text-gold-400"></i> Capo Panel Certificato</span>
+              <span class="flex items-center gap-1"><i data-lucide="check" class="w-4 h-4 text-gold-400"></i> Calcolo Mediana</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schematic Comparison: Simple Tasting vs Official Panel Test -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20" id="metodo">
+        
+        <!-- Card 1: Assaggio Casalingo / Semplice -->
+        <div class="bg-white rounded-3xl p-8 border border-limestone-200 shadow-sm relative overflow-hidden">
+          <div class="flex items-center justify-between pb-6 border-b border-limestone-200">
+            <div>
+              <span class="text-xs font-bold text-charcoal-800/60 uppercase tracking-wider">Approccio Informale</span>
+              <h3 class="font-serif text-2xl font-bold text-charcoal-900 mt-1">La Degustazione Casalinga</h3>
+            </div>
+            <div class="w-12 h-12 rounded-full bg-limestone-100 flex items-center justify-center text-charcoal-800">
+              <i data-lucide="utensils" class="w-6 h-6"></i>
+            </div>
+          </div>
+
+          <ul class="space-y-4 my-6 text-sm text-charcoal-800/85">
+            <li class="flex items-start gap-3">
+              <i data-lucide="x" class="w-4 h-4 text-red-500 shrink-0 mt-1"></i>
+              <span><strong>Bicchiere trasparente:</strong> Il colore influenza psicologicamente il giudizio (il verde brillante non è indice di qualità).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="x" class="w-4 h-4 text-red-500 shrink-0 mt-1"></i>
+              <span><strong>Temperatura casuale:</strong> A freddo le molecole aromatiche volatili rimangono intrappolate e non salgono ai recettori nasali.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="x" class="w-4 h-4 text-red-500 shrink-0 mt-1"></i>
+              <span><strong>Giudizio soggettivo:</strong> "Mi piace / non mi piace", privo di riscontro con i parametri legali dell'Unione Europea.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="x" class="w-4 h-4 text-red-500 shrink-0 mt-1"></i>
+              <span><strong>Tolleranza ai difetti:</strong> Spesso oli rancidi o riscaldati vengono scambiati per "dolci" o "della tradizione".</span>
+            </li>
+          </ul>
+
+          <div class="p-4 rounded-xl bg-limestone-100/80 text-xs text-charcoal-800/80">
+            <strong>Esito:</strong> Impressione gastronomica senza valore legale o commerciale.
+          </div>
+        </div>
+
+        <!-- Card 2: Panel Test Ufficiale AMEDOO (COI/UE) -->
+        <div class="bg-olive-900 text-limestone-50 rounded-3xl p-8 border border-olive-800 shadow-xl relative overflow-hidden">
+          <div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-gold-500/10 blur-2xl pointer-events-none"></div>
+
+          <div class="flex items-center justify-between pb-6 border-b border-olive-800/80">
+            <div>
+              <span class="text-xs font-bold text-gold-400 uppercase tracking-wider">Norma Giuridica COI/UE</span>
+              <h3 class="font-serif text-2xl font-bold text-white mt-1">Il Metodo Ufficiale Panel Test</h3>
+            </div>
+            <div class="w-12 h-12 rounded-full bg-olive-800 border border-gold-500/40 flex items-center justify-center text-gold-400">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+          </div>
+
+          <ul class="space-y-4 my-6 text-sm text-limestone-200">
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-gold-400 shrink-0 mt-1"></i>
+              <span><strong>Bicchiere cobalto blu scuro:</strong> Annulla il fattore visivo affinché la vista non condizioni la valutazione olfatto-gustativa.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-gold-400 shrink-0 mt-1"></i>
+              <span><strong>Termostatazione a 28°C ± 2°C:</strong> Temperatura precisa per esaltare le componenti aromatiche volatili (polifenoli, aldeidi).</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-gold-400 shrink-0 mt-1"></i>
+              <span><strong>Collegialità Statistica:</strong> Giudizio emesso da 8 a 12 assaggiatori indipendenti guidati da un Capo Panel certificato con calcolo della mediana.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-gold-400 shrink-0 mt-1"></i>
+              <span><strong>Valutazione Legale:</strong> Classificazione stringente in Extra Vergine (zero difetti), Vergine o Lampante (declassato per legge).</span>
+            </li>
+          </ul>
+
+          <div class="p-4 rounded-xl bg-olive-800/90 border border-gold-500/30 text-xs text-gold-300">
+            <strong>Esito:</strong> Certificazione analitica con pieno valore legale merceologico ed economico.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- The 4 Pathways: Who should join -->
+      <div class="mb-20">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h3 class="font-serif text-3xl font-bold text-olive-950">A Chi Si Rivolgono i Percorsi AMEDOO</h3>
+          <p class="text-sm text-charcoal-800/70 mt-2">Dalla carriera professionale alla consapevolezza del consumatore esigente.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Pathway 1 -->
+          <div class="bg-white rounded-2xl p-6 border border-limestone-200/90 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-olive-100 text-olive-800 flex items-center justify-center mb-4">
+              <i data-lucide="gavel" class="w-6 h-6 text-olive-800"></i>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-olive-950">Aspiranti Giudici di Panel</h4>
+            <p class="text-xs text-charcoal-800/80 leading-relaxed mt-2">
+              Professionisti che mirano all'iscrizione all'Elenco Nazionale dei Tecnici ed Esperti degli Oli di Oliva per operare in commissioni ufficiali e concorsi internazionali.
+            </p>
+          </div>
+
+          <!-- Pathway 2 -->
+          <div class="bg-white rounded-2xl p-6 border border-limestone-200/90 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-olive-100 text-olive-800 flex items-center justify-center mb-4">
+              <i data-lucide="sprout" class="w-6 h-6 text-olive-800"></i>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-olive-950">Produttori & Frantoiani</h4>
+            <p class="text-xs text-charcoal-800/80 leading-relaxed mt-2">
+              Olivicoltori ed agronomi che necessitano di tarare i tempi di gramolatura, frangitura ed estrazione in tempo reale per azzerare i difetti ed estrarre la massima frazione fenolica.
+            </p>
+          </div>
+
+          <!-- Pathway 3 -->
+          <div class="bg-white rounded-2xl p-6 border border-limestone-200/90 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-olive-100 text-olive-800 flex items-center justify-center mb-4">
+              <i data-lucide="chef-hat" class="w-6 h-6 text-olive-800"></i>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-olive-950">Sommelier, Chef & F&B</h4>
+            <p class="text-xs text-charcoal-800/80 leading-relaxed mt-2">
+              Maestri dell'ospitalità che vogliono redigere una Carta degli Oli di pregio, abbinando monovarietali pugliesi ai piatti gourmet per concordanza o contrasto armonico.
+            </p>
+          </div>
+
+          <!-- Pathway 4 -->
+          <div class="bg-white rounded-2xl p-6 border border-limestone-200/90 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all">
+            <div class="w-12 h-12 rounded-xl bg-olive-100 text-olive-800 flex items-center justify-center mb-4">
+              <i data-lucide="heart-pulse" class="w-6 h-6 text-olive-800"></i>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-olive-950">Consumatori Consapevoli</h4>
+            <p class="text-xs text-charcoal-800/80 leading-relaxed mt-2">
+              Appassionati di alimentazione sana che vogliono difendersi dalle frodi commerciali, riconoscendo oli autentici ricchi di polifenoli benefici e antiossidanti naturali.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Dialettica Sensoriale: Pregi vs Difetti Legali -->
+      <div class="bg-white rounded-3xl p-8 sm:p-10 border border-limestone-200/90 shadow-sm">
+        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-olive-950 text-center mb-8">
+          La Dialettica Sensoriale: Riconoscere Pregi e Difetti
+        </h3>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- Box Pregi Positivi -->
+          <div class="p-6 rounded-2xl bg-olive-50/70 border border-olive-200">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 rounded-full bg-olive-700 text-white flex items-center justify-center font-bold text-sm">
+                ✓
+              </div>
+              <div>
+                <h4 class="font-serif text-xl font-bold text-olive-950">I 3 Attributi Positivi Obbligatori</h4>
+                <span class="text-xs text-olive-700 font-medium">Elementi imprescindibili dell'Olio Extra Vergine di Oliva</span>
+              </div>
+            </div>
+
+            <div class="space-y-3.5 text-sm">
+              <div class="p-3 bg-white rounded-xl border border-olive-100">
+                <span class="font-bold text-olive-900 block">1. Fruttato (Verde o Maturo):</span>
+                <span class="text-xs text-charcoal-800/80">Insieme delle sensazioni olfattive che ricordano il frutto dell'oliva colto al giusto grado di maturazione, con sentori di erba falciata, carciofo, foglia di pomodoro o mandorla.</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-olive-100">
+                <span class="font-bold text-olive-900 block">2. Amaro (Percezione Gustativa):</span>
+                <span class="text-xs text-charcoal-800/80">Sapore tipico percepito sulle papille circumvallate posteriori della lingua. È la prova chimica della presenza di <strong>oleuropeina e composti fenolici</strong> salutari.</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-olive-100">
+                <span class="font-bold text-olive-900 block">3. Piccante (Percezione Trigeminale):</span>
+                <span class="text-xs text-charcoal-800/80">Sensazione pungente o tattile in gola dovuta all'<strong>oleocantale</strong>, potente antinfiammatorio naturale. Non è acidità, ma il segno tangibile della freschezza.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Box Difetti Legali -->
+          <div class="p-6 rounded-2xl bg-red-50/60 border border-red-200/80">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-8 h-8 rounded-full bg-red-700 text-white flex items-center justify-center font-bold text-sm">
+                ✕
+              </div>
+              <div>
+                <h4 class="font-serif text-xl font-bold text-red-950">I Principali Difetti Legali COI</h4>
+                <span class="text-xs text-red-700 font-medium">Basta la presenza di un solo difetto per revocare lo stato di EVO</span>
+              </div>
+            </div>
+
+            <div class="space-y-3.5 text-sm">
+              <div class="p-3 bg-white rounded-xl border border-red-100">
+                <span class="font-bold text-red-900 block">Riscaldo / Morchia:</span>
+                <span class="text-xs text-charcoal-800/80">Fermentazione anaerobica dovuta a olive stoccate troppo a lungo in cumuli o a prolungato contatto dell'olio coi fanghi di sedimentazione.</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-red-100">
+                <span class="font-bold text-red-900 block">Avvinato / Inacescito:</span>
+                <span class="text-xs text-charcoal-800/80">Formazione di acido acetico ed etanolo per fermentazione zuccherina aerobica. Ricorda l'odore dell'aceto o della vernice.</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-red-100">
+                <span class="font-bold text-red-900 block">Rancido (Ossidazione Lipidica):</span>
+                <span class="text-xs text-charcoal-800/80">Degenerazione causata da esposizione alla luce, ossigeno e calore. Odore tipico di noci vecchie, burro ossidato, grasso alterato.</span>
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-red-100">
+                <span class="font-bold text-red-900 block">Muffa / Umidità:</span>
+                <span class="text-xs text-charcoal-800/80">Olive raccolte dal suolo o stoccate in ambienti umidi con sviluppo fungino e di lieviti nocivi.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. INTERACTIVE SHOWSTOPPER: THE EVO SENSORY PROFILER (WIDGET) -->
+  <!-- ========================================================================= -->
+  <section id="profiler" class="py-24 bg-olive-950 text-limestone-50 relative overflow-hidden">
+    <!-- Atmospheric glows -->
+    <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-olive-700/20 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-gold-500/15 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold-500/20 border border-gold-400/40 text-gold-300 text-xs font-semibold tracking-wider uppercase mb-3">
+          <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+          Simulatore Scientifico di Panel Test
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+          The EVO Sensory Profiler
+        </h2>
+        <p class="text-limestone-300 text-base sm:text-lg">
+          Simula l'esperienza del banco di prova AMEDOO. Regola le coordinate sensoriali, osserva il grafico radar dinamico in tempo reale e verifica la classificazione merceologica legale secondo il regolamento COI/UE.
+        </p>
+      </div>
+
+      <!-- Quick Preset Selector Buttons -->
+      <div class="mb-10 flex flex-wrap items-center justify-center gap-2.5">
+        <span class="text-xs text-gold-400 font-semibold uppercase tracking-wider mr-2">Preset Rapidi:</span>
+        <button onclick="setPreset('coratina')" class="px-4 py-2 rounded-full bg-olive-800 hover:bg-olive-700 text-gold-300 text-xs font-medium border border-gold-500/30 transition-all hover:scale-105 active:scale-95">
+          Coratina d'Autore (Intenso)
+        </button>
+        <button onclick="setPreset('ogliarola')" class="px-4 py-2 rounded-full bg-olive-800 hover:bg-olive-700 text-gold-300 text-xs font-medium border border-gold-500/30 transition-all hover:scale-105 active:scale-95">
+          Ogliarola Barese (Armonico)
+        </button>
+        <button onclick="setPreset('peranzana')" class="px-4 py-2 rounded-full bg-olive-800 hover:bg-olive-700 text-gold-300 text-xs font-medium border border-gold-500/30 transition-all hover:scale-105 active:scale-95">
+          Peranzana Floreale (Elegante)
+        </button>
+        <button onclick="setPreset('morchia')" class="px-4 py-2 rounded-full bg-red-950/80 hover:bg-red-900 text-red-300 text-xs font-medium border border-red-700/40 transition-all hover:scale-105 active:scale-95">
+          Difetto Frantoio (Morchia)
+        </button>
+        <button onclick="setPreset('rancido')" class="px-4 py-2 rounded-full bg-red-950/80 hover:bg-red-900 text-red-300 text-xs font-medium border border-red-700/40 transition-all hover:scale-105 active:scale-95">
+          Olio Ossidato (Rancido)
+        </button>
+      </div>
+
+      <!-- Profiler Interactive Playground Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Left Column: Interactive Range Sliders (5 cols) -->
+        <div class="lg:col-span-5 bg-olive-900/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-olive-800 shadow-2xl flex flex-col justify-between space-y-6">
+          
+          <div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-2 flex items-center justify-between">
+              <span>Parametri Sensoriali</span>
+              <span class="text-xs font-sans font-normal text-gold-400 bg-olive-950/80 px-2.5 py-1 rounded-full border border-gold-500/20">Scala COI 0-10</span>
+            </h3>
+            <p class="text-xs text-limestone-300/80">Regola i cursori per simulare il foglio di assaggio del Panel Test.</p>
+          </div>
+
+          <!-- Slider 1: Fruttato -->
+          <div class="space-y-2">
+            <div class="flex justify-between items-center text-sm">
+              <label for="slider-fruttato" class="font-semibold text-limestone-100 flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
+                Fruttato (Oliva Fresca / Verde)
+              </label>
+              <span id="val-fruttato" class="font-mono text-base font-bold text-gold-400">8.0</span>
+            </div>
+            <input type="range" id="slider-fruttato" min="0" max="10" step="0.5" value="8.0" class="w-full accent-gold-500">
+            <div class="flex justify-between text-[10px] text-limestone-400">
+              <span>Assente (0)</span>
+              <span>Leggero (1-3)</span>
+              <span>Medio (3-6)</span>
+              <span>Intenso (6-10)</span>
+            </div>
+          </div>
+
+          <!-- Slider 2: Amaro -->
+          <div class="space-y-2">
+            <div class="flex justify-between items-center text-sm">
+              <label for="slider-amaro" class="font-semibold text-limestone-100 flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
+                Amaro (Polifenoli / Carciofo)
+              </label>
+              <span id="val-amaro" class="font-mono text-base font-bold text-gold-400">7.5</span>
+            </div>
+            <input type="range" id="slider-amaro" min="0" max="10" step="0.5" value="7.5" class="w-full accent-gold-500">
+            <div class="flex justify-between text-[10px] text-limestone-400">
+              <span>Assente</span>
+              <span>Lieve</span>
+              <span>Equilibrato</span>
+              <span>Robusto</span>
+            </div>
+          </div>
+
+          <!-- Slider 3: Piccante -->
+          <div class="space-y-2">
+            <div class="flex justify-between items-center text-sm">
+              <label for="slider-piccante" class="font-semibold text-limestone-100 flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
+                Piccante (Oleocantale / Trigemino)
+              </label>
+              <span id="val-piccante" class="font-mono text-base font-bold text-gold-400">8.0</span>
+            </div>
+            <input type="range" id="slider-piccante" min="0" max="10" step="0.5" value="8.0" class="w-full accent-gold-500">
+            <div class="flex justify-between text-[10px] text-limestone-400">
+              <span>Assente</span>
+              <span>Delicato</span>
+              <span>Persistente</span>
+              <span>Esplosivo</span>
+            </div>
+          </div>
+
+          <!-- Slider 4: Difetti -->
+          <div class="space-y-2 pt-2 border-t border-olive-800">
+            <div class="flex justify-between items-center text-sm">
+              <label for="slider-difetti" class="font-semibold text-red-300 flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-600 inline-block"></span>
+                Mediana Difetti (Riscaldo/Morchia/Rancido)
+              </label>
+              <span id="val-difetti" class="font-mono text-base font-bold text-red-400">0.0</span>
+            </div>
+            <input type="range" id="slider-difetti" min="0" max="10" step="0.5" value="0.0" class="w-full accent-red-500">
+            <div class="flex justify-between text-[10px] text-red-300/80">
+              <span>0.0 (EVO Perfetto)</span>
+              <span>&le; 3.5 (Vergine)</span>
+              <span>&gt; 3.5 (Lampante)</span>
+            </div>
+          </div>
+
+          <!-- Helper Reset Button -->
+          <button onclick="resetSliders()" class="text-xs text-limestone-400 hover:text-white flex items-center justify-center gap-1 py-1 transition-colors">
+            <i data-lucide="rotate-ccw" class="w-3 h-3"></i> Ripristina valori iniziali
+          </button>
+
+        </div>
+
+        <!-- Right Column: Live Dynamic SVG Radar Chart & Classification Card (7 cols) -->
+        <div class="lg:col-span-7 bg-olive-900/60 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-olive-800 flex flex-col justify-between">
+          
+          <!-- Top Classification Banner -->
+          <div id="classification-badge" class="p-4 rounded-2xl bg-emerald-950/80 border border-emerald-600/60 text-emerald-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6 transition-colors duration-300">
+            <div class="flex items-center gap-3">
+              <div id="status-icon-container" class="w-10 h-10 rounded-full bg-emerald-900/80 border border-emerald-500 flex items-center justify-center text-emerald-300 shrink-0">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-[10px] uppercase font-bold tracking-widest block text-emerald-400/80">Classificazione Merceologica Ufficiale (Reg. UE)</span>
+                <span id="classification-title" class="font-serif text-lg sm:text-xl font-bold text-white">OLIO EXTRA VERGINE DI OLIVA (EVO)</span>
+              </div>
+            </div>
+            <span id="classification-tag" class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold border border-emerald-500/40">
+              Conforme COI
+            </span>
+          </div>
+
+          <!-- Dynamic SVG Radar Chart Container -->
+          <div class="relative flex items-center justify-center py-2">
+            <svg id="sensory-radar" viewBox="0 0 400 380" class="w-full max-w-[360px] h-auto drop-shadow-lg" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Grafico Radar Sensoriale Dinamico">
+              <defs>
+                <radialGradient id="radarPolyGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#E5C158" stop-opacity="0.85"/>
+                  <stop offset="60%" stop-color="#D4AF37" stop-opacity="0.6"/>
+                  <stop offset="100%" stop-color="#556B2F" stop-opacity="0.3"/>
+                </radialGradient>
+              </defs>
+
+              <!-- Concentric Reference Polygons (Scale 2, 4, 6, 8, 10) -->
+              <g stroke="#42542B" stroke-width="1" stroke-dasharray="3 3" opacity="0.7">
+                <polygon points="200,152 238,179 223,225 177,225 162,179" />
+                <polygon points="200,114 276,169 247,260 153,260 124,169" />
+                <polygon points="200,76 314,158 270,295 130,295 86,158" />
+                <polygon points="200,38 352,148 294,330 106,330 48,148" />
+                <polygon points="200,0 390,138 318,365 82,365 10,138" stroke="#D4AF37" stroke-width="1.2" stroke-dasharray="none" opacity="0.5"/>
+              </g>
+
+              <!-- Radial Axes Lines -->
+              <g stroke="#556B2F" stroke-width="1" opacity="0.6">
+                <line x1="200" y1="190" x2="200" y2="0"/>
+                <line x1="200" y1="190" x2="390" y2="138"/>
+                <line x1="200" y1="190" x2="318" y2="365"/>
+                <line x1="200" y1="190" x2="82" y2="365"/>
+                <line x1="200" y1="190" x2="10" y2="138"/>
+              </g>
+
+              <!-- Center Anchor -->
+              <circle cx="200" cy="190" r="3" fill="#D4AF37"/>
+
+              <!-- THE DYNAMIC SENSORY POLYGON -->
+              <polygon id="radar-data-polygon" class="radar-polygon" points="200,38 340,150 300,325 110,325 50,150" fill="url(#radarPolyGrad)" stroke="#D4AF37" stroke-width="2.5" stroke-linejoin="round"/>
+
+              <!-- Data Node Circles -->
+              <circle id="node-0" class="transition-all duration-300" cx="200" cy="38" r="5" fill="#E5C158" stroke="#2D3B1E" stroke-width="2"/>
+              <circle id="node-1" class="transition-all duration-300" cx="340" cy="150" r="5" fill="#E5C158" stroke="#2D3B1E" stroke-width="2"/>
+              <circle id="node-2" class="transition-all duration-300" cx="300" cy="325" r="5" fill="#E5C158" stroke="#2D3B1E" stroke-width="2"/>
+              <circle id="node-3" class="transition-all duration-300" cx="110" cy="325" r="5" fill="#E5C158" stroke="#2D3B1E" stroke-width="2"/>
+              <circle id="node-4" class="transition-all duration-300" cx="50" cy="150" r="5" fill="#E5C158" stroke="#2D3B1E" stroke-width="2"/>
+
+              <!-- Labels for Axes -->
+              <text x="200" y="-10" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#F3D889">FRUTTATO</text>
+              <text x="395" y="142" text-anchor="start" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#F3D889">AMARO</text>
+              <text x="325" y="380" text-anchor="start" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#F3D889">PICCANTE</text>
+              <text x="75" y="380" text-anchor="end" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#F3D889">ARMONIA</text>
+              <text x="5" y="142" text-anchor="end" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#F3D889">PUREZZA</text>
+            </svg>
+          </div>
+
+          <!-- Bottom Descriptive Analysis Card -->
+          <div class="mt-4 p-4 rounded-2xl bg-olive-950/80 border border-olive-800 text-xs space-y-2">
+            <div class="flex items-center justify-between text-limestone-300">
+              <span class="font-semibold text-gold-400">Profilo Descrittivo Organolettico:</span>
+              <span id="polyphenol-badge" class="px-2 py-0.5 rounded bg-gold-900/60 text-gold-300 font-mono">Polifenoli Stimati: Alti (&gt;550 mg/kg)</span>
+            </div>
+            <p id="profile-narrative" class="text-limestone-300/90 leading-relaxed font-serif text-sm italic">
+              "Olio di spiccata personalità sensoriale con sentori netti di foglia di carciofo pugliese, mandorla fresca ed erba appena tagliata. Amaro e piccante potenti e perfettamente fusi in una trama polifenolica persistente."
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. COURSES & CERTIFICATIONS CATALOG -->
+  <!-- ========================================================================= -->
+  <section id="corsi" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest font-bold text-gold-700 bg-gold-100/80 px-3.5 py-1.5 rounded-full">
+          Offerta Formativa Ufficiale 2025/2026
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-olive-950 font-bold mt-4 mb-4">
+          Corsi Abilitanti & Masterclass di Specializzazione
+        </h2>
+        <p class="text-charcoal-800/80 text-base sm:text-lg">
+          I percorsi formativi di AMEDOO sono strutturati in conformità con i decreti ministeriali (MASAF) e gli standard internazionali del COI, garantendo il rilascio di certificazioni legalmente riconosciute.
+        </p>
+      </div>
+
+      <!-- Course Cards Grid (3 Cards) -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- Course Card 1: Idoneità Fisiologica (Main Official Course) -->
+        <div class="bg-limestone-50 rounded-3xl p-8 border-2 border-gold-500/80 shadow-xl flex flex-col justify-between relative overflow-hidden group hover:shadow-2xl transition-all duration-300">
+          <div class="absolute top-0 right-0 bg-gold-500 text-olive-950 text-[10px] font-extrabold uppercase px-4 py-1.5 rounded-bl-xl tracking-wider">
+            Più Richiesto • MASAF
+          </div>
+
+          <div>
+            <!-- Official Logo Mini Badge -->
+            <div class="h-16 w-auto flex items-center mb-6">
+              <img src="./logo.png" alt="Logo Ufficiale AMEDOO Bari" class="h-16 w-auto object-contain filter drop-shadow-sm">
+            </div>
+
+            <span class="text-xs font-bold text-olive-700 uppercase tracking-wider block">Primo Livello Abilitante</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-olive-950 mt-1 mb-3">
+              Corso di Idoneità Fisiologica all'Assaggio
+            </h3>
+            <p class="text-xs text-charcoal-800/80 leading-relaxed mb-6">
+              Il corso ufficiale autorizzato dalla Regione Puglia e dal Ministero (MASAF) per l'acquisizione dell'attestato di idoneità fisiologica, requisito obbligatorio per l'iscrizione all'Elenco Nazionale dei Tecnici ed Esperti degli Oli di Oliva Vergini ed Extravergini.
+            </p>
+
+            <!-- Key Specs -->
+            <div class="space-y-2.5 pb-6 border-b border-limestone-200 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-charcoal-800/70 flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-gold-600"></i> Durata Totale:</span>
+                <span class="font-bold text-olive-900">35 Ore (Teorico-Pratiche)</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-charcoal-800/70 flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold-600"></i> Sede:</span>
+                <span class="font-bold text-olive-900">Bari • Sede Istituzionale</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-charcoal-800/70 flex items-center gap-1.5"><i data-lucide="check-circle" class="w-3.5 h-3.5 text-gold-600"></i> Prove Selettive:</span>
+                <span class="font-bold text-olive-900">4 Serie a Norma COI</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-charcoal-800/70 flex items-center gap-1.5"><i data-lucide="award" class="w-3.5 h-3.5 text-gold-600"></i> Titolo Conseguito:</span>
+                <span class="font-bold text-gold-700">Attestato Ufficiale MASAF</span>
+              </div>
+            </div>
+
+            <!-- Syllabus Highlights -->
+            <div class="py-5 space-y-2 text-xs text-charcoal-800/80">
+              <span class="font-bold text-olive-950 block">Programma in Sintesi:</span>
+              <ul class="space-y-1.5">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-gold-600"></span> Fisiologia dell'olfatto e del gusto, soglie di percezione
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-gold-600"></span> Prova selettiva ufficiale su Fruttato, Amaro, Morchia, Rancido
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-gold-600"></span> Normativa comunitaria, etichettatura e frodi olearie
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <button onclick="openModal('Idoneità Fisiologica all\'Assaggio (35 Ore)')" class="w-full py-3.5 px-6 rounded-2xl bg-olive-800 hover:bg-olive-700 text-limestone-50 font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
+            <span>Richiedi Bando & Iscriviti</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-gold-400"></i>
+          </button>
+        </div>
+
+        <!-- Course Card 2: Masterclass Food Pairing (Gastronomy) -->
+        <div class="bg-limestone-50 rounded-3xl p-8 border border-limestone-200/90 shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+          <div>
+            <!-- Pairing Photo Preview Thumbnail -->
+            <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-md mb-6 border border-gold-500/40 bg-olive-950">
+              <img src="./culinary_pairing.webp" alt="Abbinamento Cibo Olio EVO" class="w-full h-full object-cover">
+            </div>
+
+            <span class="text-xs font-bold text-olive-700 uppercase tracking-wider block">Alta Formazione Enogastronomica</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-olive-950 mt-1 mb-3">
+              Masterclass: Abbinamento Cibo-Olio EVO & Ristorazione
+            </h3>
+            <p class="text-xs text-charcoal-800/80 leading-relaxed mb-6">
+              In collaborazione con AIS Puglia. Dedicata a chef, maitre, sommelier ed esercenti per padroneggiare la composizione della Carta degli Oli e la sinergia molecolare tra cultivar pugliesi e pietanze gourmet.
+            </p>
+
+            <!-- Key Specs -->
+            <div class="space-y-2.5 pb-6 border-b border-limestone-200 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-charcoal-800/70 flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-gold-600"></i> Durata Totale:</span>
+                <span class="font-bold text-olive-900">16 Ore (Formula Weekend)</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-charcoal-800/70 flex items-center gap-1.5"><i data-lucide="users" class="w-3.5 h-3.5 text-gold-600"></i> Target:</span>
+                <span class="font-bold text-olive-900">Sommelier, Cuochi, Gastronomi</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-charcoal-800/70 flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-600"></i> Focus:</span>
+                <span class="font-bold text-olive-900">Armonie, Contrasti & Carta Oli</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-charcoal-800/70 flex items-center gap-1.5"><i data-lucide="award" class="w-3.5 h-3.5 text-gold-600"></i> Riconoscimento:</span>
+                <span class="font-bold text-gold-700">Attestato AMEDOO / AIS</span>
+              </div>
+            </div>
+
+            <!-- Syllabus Highlights -->
+            <div class="py-5 space-y-2 text-xs text-charcoal-800/80">
+              <span class="font-bold text-olive-950 block">Programma in Sintesi:</span>
+              <ul class="space-y-1.5">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-gold-600"></span> Principi fisici e chimici di concordanza e contrapposizione
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-gold-600"></span> Prova su 15 preparazioni culinarie tipiche ed internazionali
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-gold-600"></span> Tecniche di conservazione in sala e servizio al carrello
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <button onclick="openModal('Masterclass Abbinamento Cibo-Olio EVO (16 Ore)')" class="w-full py-3.5 px-6 rounded-2xl bg-white hover:bg-olive-800 hover:text-white text-olive-900 border border-limestone-300 font-semibold text-sm shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2">
+            <span>Prenota Posto Masterclass</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- Course Card 3: Mantenimento & Taratura Panel (Continuous Alignment) -->
+        <div class="bg-limestone-50 rounded-3xl p-8 border border-limestone-200/90 shadow-sm flex flex-col justify-between relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+          <div>
+            <!-- Panel Lab Thumbnail -->
+            <div class="w-16 h-16 rounded-2xl overflow-hidden shadow-md mb-6 border border-gold-500/40 bg-olive-950">
+              <img src="./panel_lab.webp" alt="Mantenimento Panel AMEDOO" class="w-full h-full object-cover">
+            </div>
+
+            <span class="text-xs font-bold text-olive-700 uppercase tracking-wider block">Perfezionamento Continuo</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-olive-950 mt-1 mb-3">
+              Mantenimento Panel & 20 Sedute Certificate
+            </h3>
+            <p class="text-xs text-charcoal-800/80 leading-relaxed mb-6">
+              Percorso dedicato agli assaggiatori in possesso dell'Idoneità Fisiologica che devono maturare le 20 sedute certificate di assaggio previste dalla legge per completare l'iscrizione all'Elenco Nazionale.
+            </p>
+
+            <!-- Key Specs -->
+            <div class="space-y-2.5 pb-6 border-b border-limestone-200 text-xs">
+              <div class="flex items-center justify-between">
+                <span class="text-charcoal-800/70 flex items-center gap-1.5"><i data-lucide="layers" class="w-3.5 h-3.5 text-gold-600"></i> Moduli:</span>
+                <span class="font-bold text-olive-900">20 Sessioni di Assaggio</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-charcoal-800/70 flex items-center gap-1.5"><i data-lucide="users-2" class="w-3.5 h-3.5 text-gold-600"></i> Coordinamento:</span>
+                <span class="font-bold text-olive-900">Capo Panel AMEDOO</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-charcoal-800/70 flex items-center gap-1.5"><i data-lucide="activity" class="w-3.5 h-3.5 text-gold-600"></i> Metodica:</span>
+                <span class="font-bold text-olive-900">Statistica della Mediana COI</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-charcoal-800/70 flex items-center gap-1.5"><i data-lucide="award" class="w-3.5 h-3.5 text-gold-600"></i> Fine Percorso:</span>
+                <span class="font-bold text-gold-700">Iscrizione Elenco Nazionale</span>
+              </div>
+            </div>
+
+            <!-- Syllabus Highlights -->
+            <div class="py-5 space-y-2 text-xs text-charcoal-800/80">
+              <span class="font-bold text-olive-950 block">Programma in Sintesi:</span>
+              <ul class="space-y-1.5">
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-gold-600"></span> Taratura sensoriale costante su campioni a difetto controllato
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-gold-600"></span> Analisi organolettica comparata DOP e IGP italiane
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-gold-600"></span> Verbale di seduta ufficiale valevole ai fini di legge
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <button onclick="openModal('Mantenimento Panel & 20 Sedute Certificate')" class="w-full py-3.5 px-6 rounded-2xl bg-white hover:bg-olive-800 hover:text-white text-olive-900 border border-limestone-300 font-semibold text-sm shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2">
+            <span>Richiedi Calendario Sedute</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 7. SOCIAL PULSE & INSTAGRAM COMMUNITY (@amedoo_bari) -->
+  <!-- ========================================================================= -->
+  <section id="community" class="py-24 bg-limestone-50 border-t border-limestone-200 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Header -->
+      <div class="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 mb-16">
+        <div>
+          <span class="text-xs uppercase tracking-widest font-bold text-gold-700 bg-gold-100/80 px-3.5 py-1.5 rounded-full">
+            Social Community & Vita Associativa
+          </span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-olive-950 font-bold mt-4 mb-2">
+            Seguici su Instagram @amedoo_bari
+          </h2>
+          <p class="text-charcoal-800/80 text-base max-w-xl">
+            Istantanee dalle sessioni di assaggio, cerimonie di consegna attestati, visite nei frantoi ipogei e masterclass esclusive a Bari e in tutta la Puglia.
+          </p>
+        </div>
+
+        <a href="https://www.instagram.com/amedoo_bari/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-purple-700 via-pink-600 to-amber-500 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-transform hover:scale-105">
+          <i data-lucide="instagram" class="w-4 h-4"></i>
+          <span>Segui @amedoo_bari</span>
+        </a>
+      </div>
+
+      <!-- Official Live Instagram Feed Embed Container -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Column: Official Profile Card & Information (5 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-limestone-200/90 shadow-lg relative overflow-hidden">
+            <!-- Decorative Accent -->
+            <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 via-pink-500 to-purple-600"></div>
+
+            <!-- Profile Identity Header -->
+            <div class="flex items-center gap-4 pb-6 border-b border-limestone-100">
+              <div class="w-16 h-16 rounded-full p-1 bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 shadow-md shrink-0">
+                <div class="w-full h-full rounded-full bg-white p-1 overflow-hidden flex items-center justify-center">
+                  <img src="./logo-mark.png" alt="Profilo Ufficiale AMEDOO Bari" class="w-10 h-10 object-contain">
+                </div>
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="font-bold text-lg text-olive-950">@amedoo_bari</h3>
+                  <span class="inline-flex items-center justify-center w-4 h-4 rounded-full bg-blue-500 text-white" title="Account Verificato Istituzionale">
+                    <svg class="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  </span>
+                </div>
+                <p class="text-xs text-charcoal-800/70 font-medium">Associazione Assaggiatori Olio EVO</p>
+                <p class="text-[11px] text-gold-700 font-semibold mt-0.5">Camera di Commercio I.A.A. di Bari</p>
+              </div>
+            </div>
+
+            <!-- Authentic Bio & Focus -->
+            <div class="py-5 space-y-3 text-xs sm:text-sm text-charcoal-800/80 leading-relaxed border-b border-limestone-100">
+              <p class="flex items-center gap-2 font-medium text-olive-900">
+                <i data-lucide="award" class="w-4 h-4 text-gold-600 shrink-0"></i>
+                <span>Ente di Analisi Sensoriale e Formazione Ufficiale</span>
+              </p>
+              <p class="flex items-center gap-2 font-medium text-olive-900">
+                <i data-lucide="graduation-cap" class="w-4 h-4 text-olive-700 shrink-0"></i>
+                <span>Corsi di Idoneità MASAF & Masterclass Cibo-Olio</span>
+              </p>
+              <p class="flex items-center gap-2 font-medium text-olive-900">
+                <i data-lucide="map-pin" class="w-4 h-4 text-rose-600 shrink-0"></i>
+                <span>Bari • Puglia • Italia</span>
+              </p>
+            </div>
+
+            <!-- Official Direct Instagram CTA -->
+            <div class="pt-5 flex flex-col gap-3">
+              <a href="https://www.instagram.com/amedoo_bari/" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 hover:opacity-95 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2.5">
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+                <span>Apri Profilo Ufficiale Instagram</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </a>
+
+              <p class="text-[11px] text-center text-charcoal-800/60 italic">
+                Segui le dirette dalle sedute di assaggio, le cerimonie di diploma e gli eventi nei frantoi.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Official Topics Banner -->
+          <div class="bg-limestone-100/70 rounded-2xl p-5 border border-limestone-200/80">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-olive-950 mb-2.5 flex items-center gap-2">
+              <i data-lucide="hash" class="w-4 h-4 text-gold-600"></i> Temi e Attività in Evidenza
+            </h4>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-3 py-1 rounded-full bg-white border border-limestone-200 text-olive-900 font-medium">#amedoo</span>
+              <span class="px-3 py-1 rounded-full bg-white border border-limestone-200 text-olive-900 font-medium">#paneltest</span>
+              <span class="px-3 py-1 rounded-full bg-white border border-limestone-200 text-olive-900 font-medium">#assaggiatori</span>
+              <span class="px-3 py-1 rounded-full bg-white border border-limestone-200 text-olive-900 font-medium">#olioevo</span>
+              <span class="px-3 py-1 rounded-full bg-white border border-limestone-200 text-olive-900 font-medium">#coratina</span>
+              <span class="px-3 py-1 rounded-full bg-white border border-limestone-200 text-olive-900 font-medium">#baripuglia</span>
+              <span class="px-3 py-1 rounded-full bg-white border border-limestone-200 text-olive-900 font-medium">#masaf</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Live Official Instagram Embed Window (7 cols) -->
+        <div class="lg:col-span-7">
+          <div class="bg-white rounded-3xl p-4 sm:p-6 border border-limestone-200/90 shadow-xl overflow-hidden relative">
+            
+            <div class="flex items-center justify-between pb-4 mb-4 border-b border-limestone-100 text-xs text-charcoal-800/70">
+              <span class="flex items-center gap-2 font-semibold text-olive-950">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                Feed Live da Instagram (@amedoo_bari)
+              </span>
+              <a href="https://www.instagram.com/amedoo_bari/" target="_blank" rel="noopener noreferrer" class="text-gold-700 hover:text-gold-800 font-medium flex items-center gap-1 hover:underline">
+                <span>Vedi su instagram.com</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- Native Instagram Embed iFrame -->
+            <div class="relative w-full rounded-2xl overflow-hidden bg-limestone-50 border border-limestone-200 min-h-[560px] flex flex-col justify-center items-center">
+              <iframe 
+                src="https://www.instagram.com/amedoo_bari/embed/" 
+                class="w-full h-[560px] border-0 rounded-2xl bg-white" 
+                allowtransparency="true" 
+                allow="encrypted-media"
+                scrolling="yes" 
+                loading="lazy"
+                title="Feed Instagram Ufficiale AMEDOO Bari">
+              </iframe>
+            </div>
+
+            <!-- Footer note within card -->
+            <div class="mt-4 pt-3 border-t border-limestone-100 flex items-center justify-between text-[11px] text-charcoal-800/60">
+              <span>Contenuto ufficiale sincronizzato direttamente dalla pagina Instagram di AMEDOO Bari</span>
+              <a href="https://www.instagram.com/amedoo_bari/" target="_blank" rel="noopener noreferrer" class="font-semibold text-olive-800 hover:text-gold-700">@amedoo_bari &rarr;</a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Instagram Embed Script -->
+      <script async src="//www.instagram.com/embed.js"></script>
+
+      <!-- Institutional Notice / Quote -->
+      <div class="mt-12 p-6 rounded-2xl bg-white border border-limestone-200 text-center max-w-2xl mx-auto">
+        <p class="text-sm font-serif italic text-olive-900">
+          "Educare i sensi all'assaggio dell'olio d'oliva significa difendere l'onestà dei nostri agricoltori e la salute delle nostre famiglie."
+        </p>
+        <span class="text-xs text-gold-700 font-semibold tracking-wider mt-2 block uppercase">
+          — Comitato Tecnico AMEDOO Bari
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 8. INTERACTIVE REGISTRATION & CONTACT MODAL -->
+  <!-- ========================================================================= -->
+  <dialog id="course-modal" class="p-0 rounded-3xl backdrop:bg-olive-950/70 backdrop:backdrop-blur-md shadow-2xl border border-limestone-200 w-full max-w-xl open:animate-in open:fade-in open:zoom-in-95 focus:outline-none">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 relative">
+      
+      <!-- Close Button -->
+      <button onclick="closeModal()" aria-label="Chiudi Modale" class="absolute top-5 right-5 p-2 rounded-full text-charcoal-800/60 hover:text-charcoal-900 hover:bg-limestone-100 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Header with Official Logo Thumbnail -->
+      <div class="flex items-center gap-4 mb-6 pb-4 border-b border-limestone-200">
+        <div class="h-14 w-auto flex items-center shrink-0">
+          <img src="./logo.png" alt="Logo Ufficiale AMEDOO Bari" class="h-14 w-auto object-contain filter drop-shadow-sm">
+        </div>
+        <div>
+          <span class="text-xs font-bold text-gold-700 uppercase tracking-wider block">Modulo Ufficiale AMEDOO</span>
+          <h3 class="font-serif text-2xl font-bold text-olive-950">Iscrizione & Richiesta Info</h3>
+        </div>
+      </div>
+
+      <!-- Registration Form -->
+      <form id="registration-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+        
+        <div>
+          <label for="reg-name" class="block text-xs font-bold text-olive-950 uppercase tracking-wider mb-1.5">
+            Nome e Cognome *
+          </label>
+          <input type="text" id="reg-name" required placeholder="Es. Giuseppe Rossi" class="w-full px-4 py-3 rounded-xl bg-limestone-50 border border-limestone-300 text-sm text-charcoal-900 placeholder:text-charcoal-800/40 focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="reg-email" class="block text-xs font-bold text-olive-950 uppercase tracking-wider mb-1.5">
+              Indirizzo Email *
+            </label>
+            <input type="email" id="reg-email" required placeholder="tuonome@dominio.it" class="w-full px-4 py-3 rounded-xl bg-limestone-50 border border-limestone-300 text-sm text-charcoal-900 placeholder:text-charcoal-800/40 focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all">
+          </div>
+
+          <div>
+            <label for="reg-phone" class="block text-xs font-bold text-olive-950 uppercase tracking-wider mb-1.5">
+              Recapito Telefonico *
+            </label>
+            <input type="tel" id="reg-phone" required placeholder="+39 333 1234567" class="w-full px-4 py-3 rounded-xl bg-limestone-50 border border-limestone-300 text-sm text-charcoal-900 placeholder:text-charcoal-800/40 focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all">
+          </div>
+        </div>
+
+        <div>
+          <label for="reg-course" class="block text-xs font-bold text-olive-950 uppercase tracking-wider mb-1.5">
+            Corso o Masterclass di Interesse *
+          </label>
+          <select id="reg-course" required class="w-full px-4 py-3 rounded-xl bg-limestone-50 border border-limestone-300 text-sm text-charcoal-900 focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all">
+            <option value="Idoneità Fisiologica all'Assaggio (35 Ore)">Corso Ufficiale Idoneità Fisiologica all'Assaggio (35 Ore - MASAF)</option>
+            <option value="Masterclass Abbinamento Cibo-Olio EVO (16 Ore)">Masterclass Avanzata: Abbinamento Cibo-Olio EVO & Ristorazione</option>
+            <option value="Mantenimento Panel & 20 Sedute Certificate">Corsi di Mantenimento Panel & 20 Sedute Certificate</option>
+            <option value="Informazioni Generali e Iscrizione Associazione">Iscrizione all'Associazione / Info Istituzionali</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="reg-role" class="block text-xs font-bold text-olive-950 uppercase tracking-wider mb-1.5">
+            Profilo Professionale
+          </label>
+          <select id="reg-role" class="w-full px-4 py-3 rounded-xl bg-limestone-50 border border-limestone-300 text-sm text-charcoal-900 focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all">
+            <option value="Aspirante Assaggiatore">Aspirante Assaggiatore / Appassionato</option>
+            <option value="Produttore / Frantoiano">Produttore Olivicolo / Frantoiano / Agronomo</option>
+            <option value="Sommelier / Ristoratore">Sommelier / Chef / Ristoratore</option>
+            <option value="Consulente / Tecnico">Consulente Tecnico / Biologo</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="reg-notes" class="block text-xs font-bold text-olive-950 uppercase tracking-wider mb-1.5">
+            Note o Richieste Particolari
+          </label>
+          <textarea id="reg-notes" rows="3" placeholder="Scrivi qui eventuali domande su orari, quote o crediti formativi..." class="w-full px-4 py-3 rounded-xl bg-limestone-50 border border-limestone-300 text-sm text-charcoal-900 placeholder:text-charcoal-800/40 focus:outline-none focus:ring-2 focus:ring-gold-500 transition-all"></textarea>
+        </div>
+
+        <div class="flex items-start gap-2 pt-1">
+          <input type="checkbox" id="reg-privacy" required class="mt-1 accent-olive-800">
+          <label for="reg-privacy" class="text-xs text-charcoal-800/70">
+            Dichiaro di aver letto l'informativa sulla privacy e acconsento al trattamento dei dati personali per fini organizzativi relativi ai corsi AMEDOO.
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="reg-submit-btn" class="w-full py-3.5 rounded-xl bg-olive-800 hover:bg-olive-700 text-limestone-50 font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 mt-4">
+          <i data-lucide="send" class="w-4 h-4 text-gold-400"></i>
+          <span>Invia Richiesta di Partecipazione</span>
+        </button>
+
+      </form>
+
+      <!-- Success Confirmation State -->
+      <div id="modal-success" class="hidden text-center py-8 space-y-4">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 mx-auto flex items-center justify-center">
+          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        </div>
+        <h4 class="font-serif text-2xl font-bold text-olive-950">Richiesta Ricevuta con Successo</h4>
+        <p class="text-sm text-charcoal-800/80 max-w-sm mx-auto">
+          Grazie per l'interesse dimostrato. La segreteria didattica di AMEDOO Bari ti invierà a breve il bando ufficiale, le modalità di pagamento e il calendario didattico.
+        </p>
+        <div class="pt-4">
+          <button onclick="closeModal()" class="px-6 py-2.5 rounded-full bg-olive-800 text-white text-xs font-semibold hover:bg-olive-700 transition-all">
+            Chiudi Finestra
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </dialog>
+
+  <!-- ========================================================================= -->
+  <!-- 9. CONTACT & INSTITUTIONAL FOOTER -->
+  <!-- ========================================================================= -->
+  <footer id="contatti" class="bg-olive-950 text-limestone-200 pt-20 pb-12 relative overflow-hidden">
+    
+    <!-- Repeating Decorative Olive Leaves Border -->
+    <div class="absolute top-0 left-0 right-0 h-3 bg-repeat-x opacity-40" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'40\' height=\'12\' viewBox=\'0 0 40 12\'%3E%3Cpath d=\'M0 6 Q10 0 20 6 T40 6\' stroke=\'%23D4AF37\' stroke-width=\'1\' fill=\'none\'/%3E%3Ccircle cx=\'10\' cy=\'4\' r=\'1.5\' fill=\'%23556B2F\'/%3E%3Ccircle cx=\'30\' cy=\'8\' r=\'1.5\' fill=\'%23556B2F\'/%3E%3C/svg%3E');"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-olive-800/80">
+        
+        <!-- Col 1: Brand & Narrative (4 cols) -->
+        <div class="lg:col-span-4 space-y-5">
+          <div class="flex items-center gap-4">
+            <div class="h-16 w-auto flex items-center shrink-0">
+              <img src="./logo_gold.png" alt="Logo Ufficiale AMEDOO Bari" class="h-16 w-auto object-contain filter drop-shadow">
+            </div>
+            <div>
+              <span class="font-serif text-2xl font-bold tracking-wider text-white">A.M.E.D.O.O.</span>
+              <span class="text-[10px] block tracking-widest text-gold-400 uppercase font-semibold">Bari • Dal 1992</span>
+            </div>
+          </div>
+
+          <p class="text-xs sm:text-sm text-limestone-300/80 leading-relaxed">
+            Associazione Meridionale Estimatori e Degustatori dell’Olio di Oliva. L'ente di riferimento per la formazione sensoriale, i panel test ufficiali e la valorizzazione scientifica dell'Olio Extra Vergine di Oliva in Puglia e nel Mediterraneo.
+          </p>
+
+          <div class="text-xs text-gold-300 font-semibold space-y-1">
+            <p>Sede Operativa c/o Camera di Commercio di Bari</p>
+            <p class="text-limestone-400 font-normal">Corso Cavour, 2 / Via E. Mola, 19 – 70121 Bari (BA)</p>
+          </div>
+        </div>
+
+        <!-- Col 2: Institutional Quick Links (2 cols) -->
+        <div class="lg:col-span-2 space-y-4">
+          <h4 class="font-serif text-lg font-bold text-white">Navigazione</h4>
+          <ul class="space-y-2 text-xs text-limestone-300/80">
+            <li><a href="#about" class="hover:text-gold-400 transition-colors">Chi Siamo & Storia</a></li>
+            <li><a href="#perche-assaggio" class="hover:text-gold-400 transition-colors">Perché Diventare Assaggiatore</a></li>
+            <li><a href="#metodo" class="hover:text-gold-400 transition-colors">Il Metodo Panel Test</a></li>
+            <li><a href="#profiler" class="hover:text-gold-400 transition-colors">Sensory Profiler</a></li>
+            <li><a href="#corsi" class="hover:text-gold-400 transition-colors">Corsi & Abilitazioni</a></li>
+            <li><a href="#community" class="hover:text-gold-400 transition-colors">Community @amedoo_bari</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Direct Institutional Contacts (3 cols) -->
+        <div class="lg:col-span-3 space-y-4">
+          <h4 class="font-serif text-lg font-bold text-white">Contatti Istituzionali</h4>
+          <ul class="space-y-3 text-xs text-limestone-300/80">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="phone" class="w-4 h-4 text-gold-400 shrink-0 mt-0.5"></i>
+              <div>
+                <span class="block text-limestone-400">Centralino Segreteria:</span>
+                <a href="tel:0802174315" class="text-white hover:text-gold-400 font-semibold transition-colors">080 2174315</a> / 
+                <a href="tel:0802174210" class="text-white hover:text-gold-400 font-semibold transition-colors">080 2174210</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="mail" class="w-4 h-4 text-gold-400 shrink-0 mt-0.5"></i>
+              <div>
+                <span class="block text-limestone-400">Email Ufficiale:</span>
+                <a href="mailto:info@amedoo.it" class="text-white hover:text-gold-400 font-semibold transition-colors">info@amedoo.it</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="file-check" class="w-4 h-4 text-gold-400 shrink-0 mt-0.5"></i>
+              <div>
+                <span class="block text-limestone-400">PEC Certificata:</span>
+                <span class="text-white font-mono text-[11px]">amedoo@pec.it</span>
+              </div>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="instagram" class="w-4 h-4 text-gold-400 shrink-0 mt-0.5"></i>
+              <div>
+                <span class="block text-limestone-400">Social Ufficiale:</span>
+                <a href="https://www.instagram.com/amedoo_bari/" target="_blank" rel="noopener noreferrer" class="text-gold-400 hover:underline">@amedoo_bari</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter / Course Alerts (3 cols) -->
+        <div class="lg:col-span-3 space-y-4">
+          <h4 class="font-serif text-lg font-bold text-white">Ricevi i Bandi dei Corsi</h4>
+          <p class="text-xs text-limestone-300/80 leading-relaxed">
+            Iscriviti alla newsletter per ricevere in anteprima le date dei corsi di Idoneità Fisiologica e delle masterclass a Bari.
+          </p>
+
+          <form onsubmit="handleNewsletter(event)" class="space-y-2">
+            <div class="flex rounded-xl overflow-hidden border border-olive-800 focus-within:border-gold-500">
+              <input type="email" required placeholder="La tua email..." class="bg-olive-900 px-3 py-2 text-xs text-white placeholder:text-limestone-400/60 w-full focus:outline-none">
+              <button type="submit" aria-label="Iscriviti alla Newsletter" class="bg-gold-500 hover:bg-gold-400 text-olive-950 px-4 py-2 text-xs font-bold transition-colors shrink-0">
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+            <span id="newsletter-status" class="text-[11px] text-emerald-400 hidden">Iscrizione confermata con successo!</span>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Bottom Credits & Legal Disclaimers -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-limestone-400">
+        <p>
+          &copy; <span id="current-year">2025</span> A.M.E.D.O.O. Bari. Tutti i diritti riservati. Associazione senza fini di lucro fondata nel 1992.
+        </p>
+
+        <div class="flex items-center gap-4">
+          <a href="./statuto_amedoo.pdf" class="hover:text-gold-400 transition-colors">Statuto Associativo</a>
+          <span>•</span>
+          <a href="#" class="hover:text-gold-400 transition-colors">Privacy & Cookie Policy</a>
+          <span>•</span>
+          <!-- Smooth Back to Top Button -->
+          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-1 text-gold-400 hover:text-gold-300 font-semibold transition-colors">
+            <span>Torna su</span>
+            <i data-lucide="chevron-up" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT: LOGIC, RADAR SIMULATOR, MODAL, GSAP SCROLL ANIMATIONS -->
+  <!-- ========================================================================= -->
+  <script>
+    // Initialize Lucide Icons immediately
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      // Year updater
+      const yearSpan = document.getElementById('current-year');
+      if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+      // GSAP Animations with ScrollTrigger
+      initGSAPAnimations();
+
+      // Initialize Sensory Profiler Radar
+      updateSensoryProfiler();
+
+      // Setup slider event listeners
+      document.getElementById('slider-fruttato').addEventListener('input', updateSensoryProfiler);
+      document.getElementById('slider-amaro').addEventListener('input', updateSensoryProfiler);
+      document.getElementById('slider-piccante').addEventListener('input', updateSensoryProfiler);
+      document.getElementById('slider-difetti').addEventListener('input', updateSensoryProfiler);
+
+      // Mobile Menu Toggle
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+        // Close on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+      }
+    });
+
+    // -------------------------------------------------------------
+    // GSAP ANIMATIONS & COUNTERS
+    // -------------------------------------------------------------
+    function initGSAPAnimations() {
+      if (!window.gsap) return;
+
+      // Animate Hero Elements on Load
+      gsap.from("#hero h1", { opacity: 0, y: 30, duration: 1, ease: "power3.out" });
+      gsap.from("#hero p", { opacity: 0, y: 20, duration: 1, delay: 0.2, ease: "power3.out" });
+
+      // Animate Number Counters
+      const counters = document.querySelectorAll('.counter-num');
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        gsap.to(counter, {
+          scrollTrigger: {
+            trigger: counter,
+            start: "top 85%",
+            once: true
+          },
+          innerText: target,
+          duration: 2,
+          ease: "power2.out",
+          snap: { innerText: 1 }
+        });
+      });
+    }
+
+    // -------------------------------------------------------------
+    // INTERACTIVE SENSORY PROFILER & RADAR LOGIC
+    // -------------------------------------------------------------
+    // Presets definition
+    const presets = {
+      coratina: { fruttato: 8.5, amaro: 8.0, piccante: 8.5, difetti: 0.0, desc: "Coratina in purezza: Fruttato verde prorompente di foglia di carciofo e mandorla amara. Pungenza fenolica intensa e nobile." },
+      ogliarola: { fruttato: 6.0, amaro: 4.5, piccante: 5.0, difetti: 0.0, desc: "Ogliarola Barese classica: Profilo armonico e rotondo, sentori floreali, mandorla dolce ed erbe aromatiche mediterranee." },
+      peranzana: { fruttato: 7.5, amaro: 6.0, piccante: 6.5, difetti: 0.0, desc: "Peranzana dell'Alto Tavoliere: Elegante e complessa, note nette di pomodoro verde, erba appena tagliata e finale balsamico." },
+      morchia: { fruttato: 2.0, amaro: 1.0, piccante: 1.0, difetti: 4.5, desc: "Olio declassato: Grave difetto di morchia e riscaldo dovuto a decantazione inadeguata e olive stoccate in anaerobiosi." },
+      rancido: { fruttato: 0.5, amaro: 0.0, piccante: 0.0, difetti: 7.0, desc: "Olio ossidato e lampante: Ossidazione lipidica avanzata, sgradevole sentore di vernice, solvente e grasso alterato." }
+    };
+
+    function setPreset(key) {
+      const p = presets[key];
+      if (!p) return;
+      document.getElementById('slider-fruttato').value = p.fruttato;
+      document.getElementById('slider-amaro').value = p.amaro;
+      document.getElementById('slider-piccante').value = p.piccante;
+      document.getElementById('slider-difetti').value = p.difetti;
+      updateSensoryProfiler(p.desc);
+    }
+
+    function resetSliders() {
+      document.getElementById('slider-fruttato').value = 8.0;
+      document.getElementById('slider-amaro').value = 7.5;
+      document.getElementById('slider-piccante').value = 8.0;
+      document.getElementById('slider-difetti').value = 0.0;
+      updateSensoryProfiler();
+    }
+
+    function updateSensoryProfiler(customDesc) {
+      const fruttato = parseFloat(document.getElementById('slider-fruttato').value);
+      const amaro = parseFloat(document.getElementById('slider-amaro').value);
+      const piccante = parseFloat(document.getElementById('slider-piccante').value);
+      const difetti = parseFloat(document.getElementById('slider-difetti').value);
+
+      // Update text readout
+      document.getElementById('val-fruttato').textContent = fruttato.toFixed(1);
+      document.getElementById('val-amaro').textContent = amaro.toFixed(1);
+      document.getElementById('val-piccante').textContent = piccante.toFixed(1);
+      document.getElementById('val-difetti').textContent = difetti.toFixed(1);
+
+      // Calculate Derived Metrics: Armonia (Balance) and Purezza (Lack of defects)
+      const spread = Math.abs(amaro - piccante);
+      let armonia = Math.max(0, 10 - spread * 1.5 - (difetti * 1.8));
+      armonia = Math.min(10, Math.max(1, armonia));
+
+      // Purezza: 10 when difetti is 0; declines sharply as defect rises
+      const purezza = Math.max(0.5, 10 - (difetti * 1.3));
+
+      // Coordinate geometry for 5-axis Radar (Center at 200, 190, Radius Max ~ 180)
+      const cx = 200, cy = 190, maxR = 175;
+      const angles = [
+        -Math.PI / 2,
+        -Math.PI / 10,
+        3 * Math.PI / 10,
+        7 * Math.PI / 10,
+        11 * Math.PI / 10
+      ];
+
+      const values = [fruttato, amaro, piccante, armonia, purezza];
+      const points = [];
+
+      for (let i = 0; i < 5; i++) {
+        const valFraction = Math.min(10, Math.max(0, values[i])) / 10;
+        const r = valFraction * maxR;
+        const x = cx + r * Math.cos(angles[i]);
+        const y = cy + r * Math.sin(angles[i]);
+        points.push({ x: Math.round(x), y: Math.round(y) });
+
+        // Update node circle
+        const node = document.getElementById(`node-${i}`);
+        if (node) {
+          node.setAttribute('cx', Math.round(x));
+          node.setAttribute('cy', Math.round(y));
+        }
+      }
+
+      // Update Polygon Points
+      const polygon = document.getElementById('radar-data-polygon');
+      if (polygon) {
+        const pointsString = points.map(p => `${p.x},${p.y}`).join(' ');
+        polygon.setAttribute('points', pointsString);
+      }
+
+      // Classification Logic based on COI/EU Regulations
+      const badge = document.getElementById('classification-badge');
+      const title = document.getElementById('classification-title');
+      const tag = document.getElementById('classification-tag');
+      const iconContainer = document.getElementById('status-icon-container');
+      const polyBadge = document.getElementById('polyphenol-badge');
+      const narrative = document.getElementById('profile-narrative');
+
+      if (difetti === 0 && fruttato > 0) {
+        // EVO Compliant
+        badge.className = "p-4 rounded-2xl bg-emerald-950/80 border border-emerald-600/60 text-emerald-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6 transition-colors duration-300";
+        iconContainer.className = "w-10 h-10 rounded-full bg-emerald-900/80 border border-emerald-500 flex items-center justify-center text-emerald-300 shrink-0";
+        iconContainer.innerHTML = '<i data-lucide="shield-check" class="w-5 h-5"></i>';
+        title.textContent = "OLIO EXTRA VERGINE DI OLIVA (EVO)";
+        tag.textContent = "Conforme COI/UE (Zero Difetti)";
+        tag.className = "px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold border border-emerald-500/40";
+        
+        // Polyphenols evaluation
+        const totalIntensity = (amaro + piccante) / 2;
+        if (totalIntensity >= 7.0) {
+          polyBadge.textContent = "Polifenoli Stimati: Altissimi (>550 mg/kg)";
+          polyBadge.className = "px-2 py-0.5 rounded bg-emerald-900/80 text-emerald-300 font-mono";
+        } else if (totalIntensity >= 4.0) {
+          polyBadge.textContent = "Polifenoli Stimati: Medi (300-500 mg/kg)";
+          polyBadge.className = "px-2 py-0.5 rounded bg-gold-900/80 text-gold-300 font-mono";
+        } else {
+          polyBadge.textContent = "Polifenoli Stimati: Delicati (<250 mg/kg)";
+          polyBadge.className = "px-2 py-0.5 rounded bg-lime-900/80 text-lime-300 font-mono";
+        }
+
+        if (customDesc) {
+          narrative.textContent = `"${customDesc}"`;
+        } else {
+          narrative.textContent = `"Profilo sensoriale di eccellente caratura: fruttato pulito con rimandi di foglia verde e polpa d'oliva sana. Assenza totale di difetti all'esame olfattivo e retronasale, perfetta idoneità all'imbottigliamento commerciale come Extra Vergine."`;
+        }
+      } else if (difetti <= 3.5) {
+        // Vergine (Declassato)
+        badge.className = "p-4 rounded-2xl bg-amber-950/80 border border-amber-600/60 text-amber-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6 transition-colors duration-300";
+        iconContainer.className = "w-10 h-10 rounded-full bg-amber-900/80 border border-amber-500 flex items-center justify-center text-amber-300 shrink-0";
+        iconContainer.innerHTML = '<i data-lucide="alert-triangle" class="w-5 h-5"></i>';
+        title.textContent = "OLIO DI OLIVA VERGINE (DECLASSATO)";
+        tag.textContent = "Mediana Difetto ≤ 3.5";
+        tag.className = "px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold border border-amber-500/40";
+        
+        polyBadge.textContent = "Stato: Declassato da EVO per Legge";
+        polyBadge.className = "px-2 py-0.5 rounded bg-amber-900/80 text-amber-200 font-mono";
+
+        if (customDesc) {
+          narrative.textContent = `"${customDesc}"`;
+        } else {
+          narrative.textContent = `"Presenza percepita di difetto leggero/moderato (riscaldo, morchia o fieno). L'olio perde i requisiti di legge per la denominazione Extra Vergine e deve essere etichettato esclusivamente come 'Vergine'."`;
+        }
+      } else {
+        // Lampante (Non commestibile tal quale)
+        badge.className = "p-4 rounded-2xl bg-red-950/80 border border-red-600/60 text-red-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-6 transition-colors duration-300";
+        iconContainer.className = "w-10 h-10 rounded-full bg-red-900/80 border border-red-500 flex items-center justify-center text-red-300 shrink-0";
+        iconContainer.innerHTML = '<i data-lucide="shield-alert" class="w-5 h-5"></i>';
+        title.textContent = "OLIO DI OLIVA LAMPANTE (NON COMMERCIABILE)";
+        tag.textContent = "Mediana Difetto > 3.5 (Vietato alla vendita)";
+        tag.className = "px-3 py-1 rounded-full bg-red-500/20 text-red-300 text-xs font-semibold border border-red-500/40";
+
+        polyBadge.textContent = "Destinazione: Raffinazione Industriale";
+        polyBadge.className = "px-2 py-0.5 rounded bg-red-900/80 text-red-200 font-mono";
+
+        if (customDesc) {
+          narrative.textContent = `"${customDesc}"`;
+        } else {
+          narrative.textContent = `"Grave alterazione organolettica. Il campione presenta rancidità o fermentazione anaerobica profonda. Per legge (Reg. UE) non può essere destinato al consumo umano diretto ed è destinato alla rettifica industriale."`;
+        }
+      }
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    // -------------------------------------------------------------
+    // MODAL DIALOG MANAGEMENT
+    // -------------------------------------------------------------
+    function openModal(courseName) {
+      const modal = document.getElementById('course-modal');
+      const select = document.getElementById('reg-course');
+      if (courseName && select) {
+        select.value = courseName;
+      }
+      if (modal) {
+        document.getElementById('registration-form').classList.remove('hidden');
+        document.getElementById('modal-success').classList.add('hidden');
+        modal.showModal();
+        if (window.lucide) lucide.createIcons();
+      }
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('course-modal');
+      if (modal) modal.close();
+    }
+
+    // Close modal when clicking on backdrop
+    const modalEl = document.getElementById('course-modal');
+    if (modalEl) {
+      modalEl.addEventListener('click', (e) => {
+        const dialogDimensions = modalEl.getBoundingClientRect();
+        if (
+          e.clientX < dialogDimensions.left ||
+          e.clientX > dialogDimensions.right ||
+          e.clientY < dialogDimensions.top ||
+          e.clientY > dialogDimensions.bottom
+        ) {
+          modalEl.close();
+        }
+      });
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('reg-submit-btn');
+      submitBtn.innerHTML = '<i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i> Registrazione in corso...';
+      if (window.lucide) lucide.createIcons();
+
+      setTimeout(() => {
+        document.getElementById('registration-form').classList.add('hidden');
+        document.getElementById('modal-success').classList.remove('hidden');
+        submitBtn.innerHTML = '<i data-lucide="send" class="w-4 h-4 text-gold-400"></i> Invia Richiesta di Partecipazione';
+        if (window.lucide) lucide.createIcons();
+      }, 700);
+    }
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const status = document.getElementById('newsletter-status');
+      if (status) {
+        status.classList.remove('hidden');
+        setTimeout(() => status.classList.add('hidden'), 4000);
+      }
+    }
+  </script>
+
+</body>
+</html>
