@@ -189,7 +189,7 @@
           <i data-lucide="map-pin" class="w-3 h-3 text-gold-400"></i> Sede: c/o Camera di Commercio di Bari
         </span>
         <span class="text-olive-700 hidden sm:inline">|</span>
-        <span class="text-gold-300 font-semibold tracking-wider hidden sm:inline">ISCRIZIONI SESSIONE 2025/2026 APERTE</span>
+        <span class="text-gold-300 font-semibold tracking-wider hidden sm:inline">ISCRIZIONI SESSIONE 2026/2027 APERTE</span>
       </div>
     </div>
   </aside>
@@ -219,7 +219,7 @@
       </a>
 
       <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-charcoal-800" aria-label="Menu Principale">
+      <nav class="hidden lg:flex items-center gap-5 text-sm font-medium text-charcoal-800" aria-label="Menu Principale">
         <a href="#about" class="hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Chi Siamo</a>
         <a href="#perche-assaggio" class="hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">L'Arte dell'Assaggio</a>
         <a href="#metodo" class="hover:text-olive-700 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold-500 hover:after:w-full after:transition-all">Il Panel Test</a>
@@ -234,7 +234,7 @@
 
       <!-- Action Button & Mobile Toggle -->
       <div class="flex items-center gap-4">
-        <button onclick="openModal('Idoneità Fisiologica all\'Assaggio (35 Ore)')" class="hidden sm:inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-olive-800 hover:bg-olive-700 text-limestone-50 font-medium text-sm shadow-md hover:shadow-lg hover:shadow-olive-900/20 border border-gold-500/40 transition-all duration-200 transform hover:-translate-y-0.5">
+        <button onclick="openModal('Idoneità Fisiologica all\'Assaggio (35 Ore)')" class="hidden sm:inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full bg-olive-800 hover:bg-olive-700 text-limestone-50 font-medium text-sm shadow-md hover:shadow-lg hover:shadow-olive-900/20 border border-gold-500/40 transition-all duration-200 transform hover:-translate-y-0.5 shrink-0">
           <i data-lucide="award" class="w-4 h-4 text-gold-400"></i>
           <span>Iscriviti ai Corsi</span>
         </button>
@@ -1068,7 +1068,7 @@
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-xs uppercase tracking-widest font-bold text-gold-700 bg-gold-100/80 px-3.5 py-1.5 rounded-full">
-          Offerta Formativa Ufficiale 2025/2026
+          Offerta Formativa Ufficiale 2026/2027
         </span>
         <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-olive-950 font-bold mt-4 mb-4">
           Corsi Abilitanti & Masterclass di Specializzazione
@@ -1139,7 +1139,7 @@
           </div>
 
           <button onclick="openModal('Idoneità Fisiologica all\'Assaggio (35 Ore)')" class="w-full py-3.5 px-6 rounded-2xl bg-olive-800 hover:bg-olive-700 text-limestone-50 font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
-            <span>Richiedi Bando & Iscriviti</span>
+            <span>Ricevi il Programma e Iscriviti</span>
             <i data-lucide="arrow-right" class="w-4 h-4 text-gold-400"></i>
           </button>
         </div>
@@ -1621,7 +1621,7 @@
 
         <!-- Col 4: Newsletter / Course Alerts (3 cols) -->
         <div class="lg:col-span-3 space-y-4">
-          <h4 class="font-serif text-lg font-bold text-white">Ricevi i Bandi dei Corsi</h4>
+          <h4 class="font-serif text-lg font-bold text-white">Ricevi le novità sui corsi</h4>
           <p class="text-xs text-limestone-300/80 leading-relaxed">
             Iscriviti alla newsletter per ricevere in anteprima le date dei corsi di Idoneità Fisiologica e delle masterclass a Bari.
           </p>
@@ -1912,19 +1912,13 @@
       if (modal) modal.close();
     }
 
-    // Close modal when clicking on backdrop
+    // Close modal when clicking on backdrop (pointerdown: a click from the
+    // native select popup would fall outside the dialog rect and close it)
     const modalEl = document.getElementById('course-modal');
     if (modalEl) {
-      modalEl.addEventListener('click', (e) => {
-        const dialogDimensions = modalEl.getBoundingClientRect();
-        if (
-          e.clientX < dialogDimensions.left ||
-          e.clientX > dialogDimensions.right ||
-          e.clientY < dialogDimensions.top ||
-          e.clientY > dialogDimensions.bottom
-        ) {
-          modalEl.close();
-        }
+      modalEl.addEventListener('pointerdown', (e) => {
+        if (e.target !== modalEl) return;
+        modalEl.close();
       });
     }
 
