@@ -22,8 +22,8 @@ services:
     networks:
       - proxy
 
-  # Area riservata: modifica dei testi (contenuti.json) con login e password.
-  # Richiede un record DNS per il sottodominio indicato in ADMIN_HOST.
+  # Area riservata (https://associazioneamedoo.it/gestione): modifica dei testi
+  # in contenuti.json. Non è esposta al proxy: ci arriva solo il container `web`.
   admin:
     build: ./admin
     image: amedoo-admin:latest
@@ -32,11 +32,8 @@ services:
     environment:
       ADMIN_USER: ${ADMIN_USER:-amedoo}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      BASE_PATH: ${ADMIN_PATH:-/gestione}
       CONTENUTI_PATH: /data/contenuti.json
-      VIRTUAL_HOST: ${ADMIN_HOST:-gestione.associazioneamedoo.it}
-      VIRTUAL_PORT: "8000"
-      LETSENCRYPT_HOST: ${ADMIN_HOST:-gestione.associazioneamedoo.it}
-      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-segreteriaamedoo@gmail.com}
     volumes:
       - ./contenuti.json:/data/contenuti.json
     expose:

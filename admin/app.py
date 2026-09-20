@@ -25,6 +25,8 @@ CONTENUTI = Path(os.environ.get("CONTENUTI_PATH", "/data/contenuti.json"))
 CAMPI = Path(os.environ.get("CAMPI_PATH", str(BASE / "campi.json")))
 UTENTE = os.environ.get("ADMIN_USER", "amedoo")
 PASSWORD = os.environ.get("ADMIN_PASSWORD", "")
+# percorso pubblico dell'area riservata (es. /gestione quando è dietro il sito)
+PREFISSO = "/" + os.environ.get("BASE_PATH", "").strip("/") if os.environ.get("BASE_PATH", "").strip("/") else ""
 
 app = FastAPI(title="AMEDOO — Area riservata", docs_url=None, redoc_url=None)
 
@@ -140,7 +142,7 @@ def pagina(campi: list[dict], contenuti: dict, salvato: bool) -> str:
     I campi vuoti restano invariati. Per interruzioni di layout o nuove sezioni scrivi allo sviluppatore.
     <a class="sito" href="https://associazioneamedoo.it" target="_blank" rel="noopener">Apri il sito →</a>
   </p>
-  <form method="post" action="/salva">
+  <form method="post" action="{PREFISSO}/salva">
     {''.join(sezioni)}
     <div class="barra">
       <small>Le modifiche sono immediatamente visibili sul sito pubblico.</small>
@@ -177,7 +179,7 @@ async def salva(request: Request):
             if valore:
                 contenuti[chiave] = valore
     scrivi_in_place(CONTENUTI, json.dumps(contenuti, ensure_ascii=False, indent=2) + "\n")
-    return RedirectResponse("/?ok=1", status_code=303)
+    return RedirectResponse(f"{PREFISSO}/?ok=1", status_code=303)
 
 
 if not PASSWORD:

@@ -34,9 +34,11 @@ amedoo/
 
 I testi più soggetti a cambiamenti (sessione corsi, contenuti delle card dei corsi, contatti, sedi, citazione, descrizione nel footer) sono marcati in `index.html` con `data-cms="chiave"` e possono essere modificati online senza toccare il codice.
 
-- **Indirizzo**: `https://gestione.associazioneamedoo.it` (login e password in `.env`, variabili `ADMIN_USER` / `ADMIN_PASSWORD`)
+- **Indirizzo**: `https://associazioneamedoo.it/gestione` (login e password in `.env`, variabili `ADMIN_USER` / `ADMIN_PASSWORD`)
+- Sta sullo stesso dominio del sito: **nessun sottodominio, nessun record DNS aggiuntivo**. Il container `web` inoltra `/gestione/` al container `admin`
 - Le modifiche sono salvate in `contenuti.json` e visibili **subito** al refresh del sito, senza rebuild
 - Se `contenuti.json` manca o è vuoto, il sito mostra i testi presenti nell'HTML: nessun rischio di pagina vuota
+- La pagina dell'area riservata è esclusa dai motori di ricerca (`X-Robots-Tag: noindex`)
 - Per interruzioni di layout o nuove sezioni serve invece una modifica al codice
 
 ## Form contatti e newsletter
@@ -49,17 +51,16 @@ Prerequisiti: Docker + Compose, reverse proxy `nginx-proxy` (jwilder) con `acme-
 
 ```bash
 git clone https://github.com/gstorelli/amedoo.git && cd amedoo
-cp .env.example .env      # imposta PROXY_NETWORK, ADMIN_HOST e ADMIN_PASSWORD
+cp .env.example .env      # imposta PROXY_NETWORK, ADMIN_PASSWORD e (se serve) ADMIN_PATH
 sh deploy/avvia.sh        # crea contenuti.json e avvia sito + area riservata
 ```
 
-DNS necessari (record A verso l'IP del VPS):
+DNS necessario (unico record A verso l'IP del VPS):
 
 | Dominio | Uso |
 |---|---|
-| `associazioneamedoo.it` | sito (nginx-proxy + certificato Let's Encrypt automatico) |
-| `www.associazioneamedoo.it` | redirect/copia del sito |
-| `gestione.associazioneamedoo.it` | area riservata |
+| `associazioneamedoo.it` | sito + area riservata su `/gestione` (nginx-proxy + certificato Let's Encrypt automatico) |
+| `www.associazioneamedoo.it` | alias del sito |
 
 Aggiornare dopo una modifica al codice:
 
