@@ -1,0 +1,50 @@
+# Sito statico AMEDOO + area riservata, dietro nginx-proxy (jwilder/nginx-proxy)
+# con acme-companion per i certificati Let's Encrypt.
+# nginx-proxy genera le vhost e acme-companion richiede i certificati leggendo
+# VIRTUAL_HOST / LETSENCRYPT_HOST: non serve modificare la config del proxy.
+
+services:
+  web:
+    build: .
+    image: amedoo-web:latest
+    container_name: amedoo-web
+    restart: unless-stopped
+    environment:
+      VIRTUAL_HOST: ${VIRTUAL_HOST:-associazioneamedoo.it,www.associazioneamedoo.it}
+      VIRTUAL_PORT: "80"
+      LETSENCRYPT_HOST: ${LETSENCRYPT_HOST:-associazioneamedoo.it,www.associazioneamedoo.it}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-segreteriaamedoo@gmail.com}
+    volumes:
+      # i testi modificati dall'area riservata sono serviti senza rebuild
+      - ./contenuti.json:/usr/share/nginx/html/contenuti.json:ro
+    expose:
+      - "80"
+    networks:
+      - proxy
+
+  # Area riservata: modifica dei testi (contenuti.json) con login e password.
+  # Richiede un record DNS per il sottodominio indicato in ADMIN_HOST.
+  admin:
+    build: ./admin
+    image: amedoo-admin:latest
+    container_name: amedoo-admin
+    restart: unless-stopped
+    environment:
+      ADMIN_USER: ${ADMIN_USER:-amedoo}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+      CONTENUTI_PATH: /data/contenuti.json
+      VIRTUAL_HOST: ${ADMIN_HOST:-gestione.associazioneamedoo.it}
+      VIRTUAL_PORT: "8000"
+      LETSENCRYPT_HOST: ${ADMIN_HOST:-gestione.associazioneamedoo.it}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-segreteriaamedoo@gmail.com}
+    volumes:
+      - ./contenuti.json:/data/contenuti.json
+    expose:
+      - "8000"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
+    name: ${PROXY_NETWORK:-nginx-proxy}

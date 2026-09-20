@@ -1,0 +1,40 @@
+[
+  { "key": "banner.sessione", "label": "Banner in alto — stato iscrizioni", "gruppo": "Generale", "righe": 2 },
+  { "key": "corsi.eyebrow", "label": "Sezione corsi — etichetta anno/sessione", "gruppo": "Generale", "righe": 2 },
+  { "key": "corsi.intro", "label": "Sezione corsi — introduzione", "gruppo": "Generale", "righe": 4 },
+  { "key": "metodo.regolamento", "label": "Metodo di prova (normativa UE)", "gruppo": "Generale", "righe": 2 },
+  { "key": "quote.testo", "label": "Citazione del Comitato Tecnico", "gruppo": "Generale", "righe": 4 },
+  { "key": "quote.autore", "label": "Firma della citazione", "gruppo": "Generale", "righe": 2 },
+
+  { "key": "corso1.titolo", "label": "Corso 1 — titolo", "gruppo": "Corso: Idoneità Fisiologica", "righe": 2 },
+  { "key": "corso1.descrizione", "label": "Corso 1 — descrizione", "gruppo": "Corso: Idoneità Fisiologica", "righe": 5 },
+  { "key": "corso1.durata", "label": "Corso 1 — durata", "gruppo": "Corso: Idoneità Fisiologica", "righe": 1 },
+  { "key": "corso1.sede", "label": "Corso 1 — sede", "gruppo": "Corso: Idoneità Fisiologica", "righe": 1 },
+  { "key": "corso1.prove", "label": "Corso 1 — prove selettive", "gruppo": "Corso: Idoneità Fisiologica", "righe": 1 },
+  { "key": "corso1.titolo_conseguito", "label": "Corso 1 — titolo conseguito", "gruppo": "Corso: Idoneità Fisiologica", "righe": 2 },
+
+  { "key": "corso2.titolo", "label": "Masterclass — titolo", "gruppo": "Masterclass abbinamento", "righe": 2 },
+  { "key": "corso2.descrizione", "label": "Masterclass — descrizione", "gruppo": "Masterclass abbinamento", "righe": 5 },
+  { "key": "corso2.durata", "label": "Masterclass — durata", "gruppo": "Masterclass abbinamento", "righe": 1 },
+  { "key": "corso2.target", "label": "Masterclass — destinatari", "gruppo": "Masterclass abbinamento", "righe": 1 },
+  { "key": "corso2.focus", "label": "Masterclass — focus", "gruppo": "Masterclass abbinamento", "righe": 1 },
+  { "key": "corso2.riconoscimento", "label": "Masterclass — riconoscimento", "gruppo": "Masterclass abbinamento", "righe": 1 },
+
+  { "key": "corso3.titolo", "label": "20 Sedute — titolo", "gruppo": "20 Sedute Certificate", "righe": 2 },
+  { "key": "corso3.descrizione", "label": "20 Sedute — descrizione", "gruppo": "20 Sedute Certificate", "righe": 5 },
+  { "key": "corso3.fine_percorso", "label": "20 Sedute — fine percorso", "gruppo": "20 Sedute Certificate", "righe": 2 },
+
+  { "key": "corso4.titolo", "label": "Addestramento — titolo", "gruppo": "Addestramento e Perfezionamento", "righe": 2 },
+  { "key": "corso4.descrizione", "label": "Addestramento — descrizione", "gruppo": "Addestramento e Perfezionamento", "righe": 4 },
+  { "key": "corso4.durata", "label": "Addestramento — durata", "gruppo": "Addestramento e Perfezionamento", "righe": 1 },
+  { "key": "corso4.fine_percorso", "label": "Addestramento — fine percorso", "gruppo": "Addestramento e Perfezionamento", "righe": 2 },
+
+  { "key": "contatti.tel1", "label": "Telefono 1", "gruppo": "Contatti e sedi", "righe": 1 },
+  { "key": "contatti.tel2", "label": "Telefono 2", "gruppo": "Contatti e sedi", "righe": 1 },
+  { "key": "contatti.email", "label": "Email segreteria (usata anche dai form)", "gruppo": "Contatti e sedi", "righe": 1 },
+  { "key": "contatti.pec", "label": "PEC", "gruppo": "Contatti e sedi", "righe": 1 },
+  { "key": "contatti.instagram", "label": "Instagram (solo testo visualizzato)", "gruppo": "Contatti e sedi", "righe": 1 },
+  { "key": "contatti.sede_legale", "label": "Sede legale", "gruppo": "Contatti e sedi", "righe": 2 },
+  { "key": "contatti.sede_operativa", "label": "Sede operativa", "gruppo": "Contatti e sedi", "righe": 2 },
+  { "key": "footer.descrizione", "label": "Descrizione associazione nel footer", "gruppo": "Contatti e sedi", "righe": 5 }
+]

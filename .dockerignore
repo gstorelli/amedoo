@@ -1,0 +1,19 @@
+# Solo i file effettivamente serviti entrano nell'immagine:
+# niente .git, documenti di lavoro o asset non referenziati.
+*
+!.dockerignore
+!Dockerfile
+!index.html
+!logo.png
+!logo_gold.png
+!logo-mark.png
+!hero_tasting.webp
+!monumental_grove.webp
+!panel_lab.webp
+!culinary_pairing.webp
+!partner_cciaa_bari.png
+!partner_samer.png
+!statuto_amedoo.pdf
+!contenuti.esempio.json
+!deploy
+!deploy/default.conf

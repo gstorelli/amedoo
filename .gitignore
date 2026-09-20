@@ -3,3 +3,10 @@
 # Documenti di lavoro interni: restano in locale, non nel repo pubblico
 sito internet.docx
 sito internet.pdf
+
+# Testi modificati dall'area riservata sul VPS (il seed è contenuti.esempio.json)
+contenuti.json
+
+# File di servizio (non fanno parte del sito)
+__pycache__/
+.kilo/
